@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Poller_One, Abril_Fatface, Abhaya_Libre } from "next/font/google";
 import './globals.css'
+import Header from '@/components/header';
 
 
 const abhayaLibre = Abhaya_Libre({
@@ -34,6 +35,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <Header />
       <body className={`${abrilFatface.variable} ${pollerOne.variable} ${abhayaLibre.variable}`}>{children}</body>
     </html>
   )
