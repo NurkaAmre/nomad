@@ -13,7 +13,7 @@ const Header = () => {
   return (
     <header className='bg-[#131C27] text-white flex flex-col md:flex-row justify-between px-4 py-2 md:py-3 w-full fixed z-20'>
       <div className='flex justify-between'>
-        <h1 className='font-poller tracking-wider font-semibold text-3xl text-[#797DA5] md:px-4 md:text-4xl'>Nomads.</h1>
+        <Link href='/'> <h1 className='font-poller tracking-wider font-semibold text-3xl text-[#797DA5] md:px-4 md:text-4xl'>Nomads.</h1></Link>
         <div className='md:hidden text-3xl'>
           <button onClick={toggleMenu} className='text-white'>
             <AiOutlineMenu />
