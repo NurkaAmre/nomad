@@ -35,8 +35,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <Header />
-      <body className={`${abrilFatface.variable} ${pollerOne.variable} ${abhayaLibre.variable}`}>{children}</body>
+      <body className={`${abrilFatface.variable} ${pollerOne.variable} ${abhayaLibre.variable}`}>
+        <Header />
+        <main>
+          {children}
+        </main>
+      </body>
     </html>
   )
 }
