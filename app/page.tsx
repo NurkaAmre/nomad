@@ -4,8 +4,8 @@ import CountryInfo from '@/components/countryInfo'
 
 export default function Home() {
   return (
-    <main className="">
+    <>
       <CountryInfo />
-    </main>
+    </>
   )
 }
