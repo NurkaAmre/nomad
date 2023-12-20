@@ -2,7 +2,7 @@ import React from 'react'
 
 const CountryInfo = () => {
   return (
-    <section className='text-white md:py-10 py-20'>
+    <section className='text-white md:py-6 py-8'>
       <div className='md:px-[4rem] px-6 pt-10'>
         <h2 className='text-center mb-3 text-5xl md:text-6xl font-abhaya'>Mongolia</h2>
         <hr className='w-[180px] md:w-[720px] h-px mx-auto mt-2 mb-10 md:mb-2 bg-gray-500 border-0 rounded dark:bg-gray-700' />
