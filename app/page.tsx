@@ -3,6 +3,7 @@ import { Button } from '@/components/UI/button'
 import CountryInfo from '@/components/countryInfo'
 import Services from '@/components/services'
 import Hero from '@/components/sections/Hero'
+import PopularPlaces from '@/components/sections/PopularPlaces'
 
 export default function Home() {
   return (
@@ -10,6 +11,7 @@ export default function Home() {
       <Hero />
       <CountryInfo />
       <Services />
+      <PopularPlaces />
     </>
   )
 }
