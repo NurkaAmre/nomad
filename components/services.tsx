@@ -11,8 +11,8 @@ const Services = () => {
           We cover all expenses from picking the perfect hotel to flights and destinations.
         </p>
       </div>
-      <div className="bg-white grid gap-4 md:grid-cols-2 py-10 md:px-20 px-8 md:gap-x-6 md:gap-y-8">
-        <div className="shadow-lg">
+      <ul className="bg-white grid gap-4 md:grid-cols-2 py-10 md:px-20 px-8 md:gap-x-14 md:gap-y-8">
+        <li className="shadow-lg">
           <div className="flex justify-evenly text-white py-2 bg-[#1B1D33]">
             <p className="font-abril">Tour Guide</p>
             <FaPlane className="text-2xl" />
@@ -21,8 +21,8 @@ const Services = () => {
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis magnam ut ea error perspiciatis magni velit
             unde tempore quasi? Dignissimos?
           </p>
-        </div>
-        <div className="shadow-lg">
+        </li>
+        <li className="shadow-lg">
           <div className="flex justify-evenly text-white py-2 bg-[#1B1D33]">
             <p className="font-abril">Hotel</p>
             <FaHotel className="text-2xl" />
@@ -31,8 +31,8 @@ const Services = () => {
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis magnam ut ea error perspiciatis magni velit
             unde tempore quasi? Dignissimos?
           </p>
-        </div>
-        <div className="shadow-lg">
+        </li>
+        <li className="shadow-lg">
           <div className="flex justify-evenly text-white py-2 bg-[#1B1D33]">
             <p className="font-abril">Transport</p>
             <FaBus className="text-2xl" />
@@ -41,8 +41,8 @@ const Services = () => {
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis magnam ut ea error perspiciatis magni velit
             unde tempore quasi? Dignissimos?
           </p>
-        </div>
-        <div className="shadow-lg">
+        </li>
+        <li className="shadow-lg">
           <div className="flex justify-evenly text-white font-abril py-2 bg-[#1B1D33]">
             <p className="font-abril">Meal</p>
             <FaUtensils className="text-2xl" />
@@ -51,8 +51,8 @@ const Services = () => {
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis magnam ut ea error perspiciatis magni velit
             unde tempore quasi? Dignissimos?
           </p>
-        </div>
-      </div>
+        </li>
+      </ul>
     </section>
   );
 };
