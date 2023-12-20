@@ -39,7 +39,7 @@ const PopularPlaces = async () => {
 
   return (
     <section className="py-10 px-4 md:px-6">
-      <h2 className="text-[24px] text-center my-2 mb-6">Popular Places</h2>
+      <h2 className="text-[24px] md:text-4xl text-center my-2 mb-6">Popular Places</h2>
       <ul className="grid grid-cols-2 md:grid-cols-4 grid-rows-auto grid-flow-row-dense gap-4 p-0 list-none">{popularPlacesContent}</ul>
     </section>
   );
