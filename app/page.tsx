@@ -5,6 +5,8 @@ import CountryInfo from '@/components/countryInfo'
 import Services from '@/components/services'
 import Hero from '@/components/sections/Hero'
 import Todo from '@/components/todo'
+import PopularPlaces from '@/components/sections/PopularPlaces'
+
 
 export default function Home() {
   return (
@@ -13,6 +15,7 @@ export default function Home() {
       <CountryInfo />
       <Services />
       <Todo />
+      <PopularPlaces />
     </>
   )
 }
