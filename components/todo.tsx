@@ -105,7 +105,7 @@ const Todo = () => {
             <Link href='#'
               key={index}
               className={`option relative overflow-hidden  w-[370px] md:h-[500px] rounded-md cursor-pointer transition duration-500 ease-in-out ${
-                expandedIndex === index ? 'md:w-[500px] h-[400px]' : 'md:w-28 h-32'
+                expandedIndex === index ? 'md:w-[500px] h-[400px]' : 'md:w-24 h-32'
               }`}
               onMouseEnter={() => handleHover(index)}
             onClick={handleClick}
