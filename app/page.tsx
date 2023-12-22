@@ -4,6 +4,7 @@ import CountryInfo from '@/components/countryInfo'
 import Services from '@/components/services'
 import Hero from '@/components/sections/Hero'
 import PopularPlaces from '@/components/sections/PopularPlaces'
+import FaqSection from '@/components/sections/FaqSection'
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       <CountryInfo />
       <Services />
       <PopularPlaces />
+      <FaqSection />
     </>
   )
 }
