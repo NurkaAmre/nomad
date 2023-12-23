@@ -1,8 +1,8 @@
-import type { Metadata } from 'next'
+import type { Metadata } from "next";
 import { Poller_One, Abril_Fatface, Abhaya_Libre } from "next/font/google";
-import './globals.css'
-import Header from '@/components/header';
-
+import "./globals.css";
+import Header from "@/components/header";
+import Footer from "@/components/UI/Footer";
 
 const abhayaLibre = Abhaya_Libre({
   subsets: ["latin"],
@@ -21,26 +21,27 @@ const abrilFatface = Abril_Fatface({
 });
 
 export const metadata: Metadata = {
-  title: 'Nomads App',
-  description: 'Safely travel the world with Nomads',
+  title: "Nomads App",
+  description: "Safely travel the world with Nomads",
   icons: {
-    icon: '/favicon.ico',
-  }
-}
+    icon: "/favicon.ico",
+  },
+};
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
     <html lang="en">
-      <body className={`${abrilFatface.variable} ${pollerOne.variable} ${abhayaLibre.variable}`}>
+      <body
+        className={`${abrilFatface.variable} ${pollerOne.variable} ${abhayaLibre.variable}`}
+      >
         <Header />
-        <main>
-          {children}
-        </main>
+        <main>{children}</main>
+        <Footer />
       </body>
     </html>
-  )
+  );
 }
