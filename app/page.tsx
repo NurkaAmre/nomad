@@ -7,6 +7,7 @@ import Hero from '@/components/sections/Hero'
 import Todo from '@/components/todo'
 import PopularPlaces from '@/components/sections/PopularPlaces'
 import Tours from '@/components/tours'
+import FaqSection from '@/components/sections/FaqSection'
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
       <Tours />
       <Todo />
       <PopularPlaces />
+      <FaqSection />
     </>
   )
 }
