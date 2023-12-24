@@ -1,0 +1,6 @@
+[
+  { "id": 1, "image": "/images/t1.jpg", "author": "TOUR OF NOMADS", "title": "DESIGN SLIDER", "topic": "TOUR", "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit..." },
+  { "id": 2, "image": "/images/t2.jpg", "author": "TOUR OF NOMADS", "title": "DESIGN SLIDER", "topic": "TOUR", "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit..." },
+  { "id": 3, "image": "/images/t3.jpg", "author": "TOUR OF NOMADS", "title": "DESIGN SLIDER", "topic": "TOUR", "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit..." },
+  { "id": 4, "image": "/images/t4.jpg", "author": "TOUR OF NOMADS", "title": "DESIGN SLIDER", "topic": "TOUR", "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit..." }
+]
