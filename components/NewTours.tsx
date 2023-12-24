@@ -1,8 +1,18 @@
+// Tours.tsx
+
 "use client";
-import { url } from "inspector";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import './Carousel.css';
+
+type TourItemType = {
+  id: number;
+  image: string;
+  author: string;
+  title: string;
+  topic: string;
+  description: string;
+};
 
 type PropTypes = {
   tours: TourItemType[];
@@ -59,26 +69,27 @@ const Tours = ({ tours }: PropTypes) => {
   return (
     <div className="relative w-full">
       <div
-        className=" md:h-[100vh] "
+        className="md:h-[100vh]"
         style={{
           backgroundImage: `url(${tours[currentSlide].image})`,
           backgroundRepeat: "no-repeat",
           backgroundSize: "cover",
+          transition: "background-image 0.5s ease-in-out",
         }}
       >
-        <div className=" md:mx-[10rem] bg-black opacity-50  min-h-[25rem] h-[100%] p-10">
-          <h4 className="text-white font-bold tracking-[10px] md:mt-[5rem] md:text-2xl text-base">
+        <div className="md:mx-[10rem] bg-black opacity-50 min-h-[25rem] h-[100%] p-10">
+          <h4 className="text-white font-bold tracking-[10px] md:mt-[5rem] md:text-2xl text-base text-animation">
             {tours[currentSlide].author}
           </h4>
-          <h2 className="text-white leading-[1.3em] text-[2em] md:text-[5em] font-bold ">
+          <h2 className="text-white leading-[1.3em] text-[2em] md:text-[5em] font-bold text-animation">
             {tours[currentSlide].title}
             <br />
           </h2>
-          <h3 className="text-[#f1683a] leading-[1.3em] md:text-[5em] text-[4em] font-bold ">
+          <h3 className="text-[#f1683a] leading-[1.3em] md:text-[5em] text-[4em] font-bold text-animation">
             {tours[currentSlide].topic}
           </h3>
-          <p className="mt-4">{tours[currentSlide].description}</p>
-          <div className="mt-4 flex gap-4">
+          <p className="mt-4 text-animation">{tours[currentSlide].description}</p>
+          <div className="mt-4 flex gap-4 text-animation">
             <button className="bg-[#4a81c4] text-white px-4 py-2 font-abhaya font-extrabold hover:bg-[#eee] hover:text-[#212125]">Read More</button>
             <button className="text-black px-4 py-2 font-abhaya font-extrabold bg-[#eee] hover:bg-[#4a81c4] hover:text-[#eee]">Book Now</button>
           </div>
