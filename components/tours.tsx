@@ -1,10 +1,10 @@
 'use client'
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
-import gobi from '@/public/images/gobi.jpg';
-import tavanbogd from '@/public/images/tavanbogd.jpg';
-import winter from '@/public/images/winter.jpg';
-import naadam from '@/public/images/naadam.jpg';
+import gobi from '@/public/images/t3.jpg';
+import tavanbogd from '@/public/images/t4.jpg';
+import winter from '@/public/images/t1.jpg';
+import naadam from '@/public/images/t2.jpg';
 import './Carousel.css';
 import { AiOutlinePicLeft, AiOutlinePicRight } from 'react-icons/ai';
 
