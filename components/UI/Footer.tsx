@@ -15,7 +15,7 @@ const Footer = () => {
           <ul className="mt-4 space-y-2 h-full flex flex-col justify-center">
             <li>
               <Link
-                className="block p-1 hover:text-sky-300 transition-all duration-100 ease-in-out hover:translate-x-1"
+                className="block p-1 hover:text-[#6179ad] transition-all duration-100 ease-in-out hover:translate-x-1"
                 href="#"
               >
                 About Nomads
