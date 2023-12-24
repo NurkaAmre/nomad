@@ -6,8 +6,10 @@ import Services from '@/components/services'
 import Hero from '@/components/sections/Hero'
 import Todo from '@/components/todo'
 import PopularPlaces from '@/components/sections/PopularPlaces'
+import Tours from '@/components/tours'
 import FaqSection from '@/components/sections/FaqSection'
 import TourSection from '@/components/sections/TourSection'
+
 
 export default function Home() {
   return (
