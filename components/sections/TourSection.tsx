@@ -4,8 +4,7 @@ import Tours from "@/components/NewTours";
 const TourSection = async () => {
   const tourData = await GetTourData();
   return (
-    <section className="pt-10">
-      <h2 className="text-4xl py-4 text-center mb-4">Tour Section</h2>
+    <section className="mb-10">
       {tourData.length > 0 ? (
         <Tours tours={tourData} />
       ) : (
