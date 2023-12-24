@@ -9,3 +9,14 @@ interface PopularPlacesType {
   title: string;
   image: string;
 }
+
+type TourItemType = {
+  id: number;
+  image: string;
+  author: string;
+  title: string;
+  topic: string;
+  description: string;
+};
+
+type TourListType = TourItemType[];

@@ -148,6 +148,9 @@
   align-items: center;
   @media screen and (max-width: 678px) {
       gap: 0.5rem;
+      bottom: -25%;
+        right: 35%;
+        gap: 3rem;
     }
 }
 
@@ -162,6 +165,11 @@
   font-weight: bold;
   font-size: 1.5rem;
   transition: 1s;
+  @media screen and (max-width: 678px) {
+      width: 30px;
+      height: 30px;
+      font-size: 1rem;
+    }
 }
 
 .arrows button:hover {
