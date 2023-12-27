@@ -1,9 +1,9 @@
 import { type SchemaTypeDefinition } from 'sanity'
 
 
-export const placesSchema: {
-  name: 'picture',
-  title: 'Picture',
+export const placesSchema =  {
+  name: 'places',
+  title: 'Places',
   type: 'document',
   fields: [
     {
