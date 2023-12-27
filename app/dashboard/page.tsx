@@ -1,11 +1,29 @@
-import { client } from "@/sanity/lib/client";
+"use client";
 
-const Dashboard = async () => {
-  // fetch all user data from sanity
-  const data =  await client.fetch(`*[_type == "user"]`);
-  console.log(data);
+import { useSession } from "next-auth/react";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { useEffect } from "react";
 
-  return <div>Dashboard</div>;
+const Dashboard =  () => {
+
+  const router = useRouter();
+  const {data: session} = useSession();
+
+  // useEffect(() => {
+  //   if (!session) router.push("/login")
+  // }, [session]);
+
+  console.log(session)
+  
+
+  return <div className="py-20">
+    <h2>Dashboard</h2>
+    {session && <p>Welcome {session.user.name}</p>}
+    <Link href="/">
+        Home
+    </Link>
+  </div>;
 
 }
 
