@@ -1,7 +1,6 @@
-import { type SchemaTypeDefinition } from 'sanity'
+import { SchemaTypeDefinition } from 'sanity'
 
-
-export const placesSchema: {
+export const placesSchema: SchemaTypeDefinition = {
   name: 'picture',
   title: 'Picture',
   type: 'document',
