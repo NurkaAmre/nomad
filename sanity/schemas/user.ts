@@ -29,7 +29,7 @@ const user = defineField({
       description: 'Check if the user is admin',
       initialValue: false,
       validation: Rule => Rule.required(),
-        readOnly: true,
+        // readOnly: true,
     }),
     defineField({
       name: 'image',

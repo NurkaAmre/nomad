@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Poller_One, Abril_Fatface, Abhaya_Libre } from "next/font/google";
 import "./globals.css";
+import AuthProvider from "@/components/Layout/AuthProvider";
 import Header from "@/components/header";
 import Footer from "@/components/UI/Footer";
 
@@ -38,9 +39,11 @@ export default function RootLayout({
       <body
         className={`${abrilFatface.variable} ${pollerOne.variable} ${abhayaLibre.variable}`}
       >
-        <Header />
-        <main>{children}</main>
-        <Footer />
+        <AuthProvider>
+          <Header />
+          <main>{children}</main>
+          <Footer />
+        </AuthProvider>
       </body>
     </html>
   );
