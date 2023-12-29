@@ -87,7 +87,7 @@ const Login = () => {
           Login
         </button>
         <p className="text-center my-2 p-4 text-black text-lg">
-          If you you don't have any account, please{" "}
+          If you you don&apos;t have any account, please{" "}
           <Link href="/signup" className="text-slate-950 text-lg ms-2 font-bold">
             Signup
           </Link>
