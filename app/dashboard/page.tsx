@@ -1,6 +1,6 @@
 "use client";
 
-import { useSession } from "next-auth/react";
+import { useSession, signOut } from "next-auth/react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
@@ -10,9 +10,9 @@ const Dashboard =  () => {
   const router = useRouter();
   const {data: session} = useSession();
 
-  // useEffect(() => {
-  //   if (!session) router.push("/login")
-  // }, [session]);
+  useEffect(() => {
+    if (!session) router.push("/login")
+  }, [session]);
 
   console.log(session)
   
@@ -23,6 +23,7 @@ const Dashboard =  () => {
     <Link href="/">
         Home
     </Link>
+    <button className="block p-4 bg-red-500 text-white" onClick={() => signOut()}>Sign Out</button>
   </div>;
 
 }

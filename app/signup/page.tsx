@@ -1,10 +1,10 @@
 "use client";
 
-import React, { useState, FormEvent, ChangeEvent } from "react";
+import React, { useState, FormEvent, ChangeEvent, use, useEffect } from "react";
 import { signUp } from "next-auth-sanity/client";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
-import { set } from "sanity";
+import LoadingAnimation from "@/components/UI/Loader";
 
 const Signup = () => {
   const [formData, setFormData] = useState({
@@ -18,6 +18,10 @@ const Signup = () => {
   const [passwordError, setPasswordError] = useState<null | string>(null);
   const [formError, setFormError] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [nameIsTouch, setNameIsTouch] = useState<boolean>(false);
+  const [emailIsTouch, setEmailIsTouch] = useState<boolean>(false);
+  const [passwordIsTouch, setPasswordIsTouch] = useState<boolean>(false);
+
 
   const isFormValid = !nameError && !emailError && !passwordError;
 
@@ -25,45 +29,6 @@ const Signup = () => {
 
   const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
-
-    // validate inputs on change
-    if (name === "name") {
-      if (value.trim().length < 3 || value.trim().length > 50) {
-        setNameError("Name should be between 3 and 50 characters");
-      } else {
-        const regex = /^[a-zA-Z]+( [a-zA-Z]+)*$/;
-        if (!regex.test(value)) {
-          setNameError(
-            "Name should be only alphabet and allow space between words(optional)"
-          );
-        } else {
-          setNameError(null);
-        }
-      }
-    } else if (name === "email") {
-      if (value.length < 3 || value.length > 50) {
-        setEmailError("Email should be between 3 and 50 characters");
-      } else {
-        // email should be valid
-        const regex = /^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$/;
-        if (!regex.test(value)) {
-          setEmailError("Email should be valid");
-        } else {
-          setEmailError(null);
-        }
-      }
-    } else if (name === "password") {
-      if (value.length < 6 || value.length > 50) {
-        setPasswordError("Password should be between 6 and 50 characters");
-      } else {
-        setPasswordError(null);
-      }
-    } else {
-      setNameError(null);
-      setEmailError(null);
-      setPasswordError(null);
-      setFormError(null);
-    } // end of validation
 
     setFormData({ ...formData, [name]: value });
   };
@@ -73,6 +38,9 @@ const Signup = () => {
     e.stopPropagation();
 
     if (!isFormValid) {
+      setNameIsTouch(true);
+      setEmailIsTouch(true);
+      setPasswordIsTouch(true);
       setFormError("Please fill all the fields with valid data");
       return;
     }
@@ -89,6 +57,47 @@ const Signup = () => {
       setIsLoading(false);
     }
   };
+
+  useEffect(() => {
+    if (formData.name.trim().length < 3 || formData.name.trim().length > 50) {
+      setNameError("Name should be between 3 and 50 characters");
+    } else {
+      const regex = /^[a-zA-Z]+( [a-zA-Z]+)*$/;
+      if (!regex.test(formData.name)) {
+        setNameError(
+          "Name should be only alphabet and allow space between words(optional)"
+        );
+      } else {
+        nameError && setNameError(null);
+      }
+    }
+
+    if (formData.email.length < 3 || formData.email.length > 50) {
+      setEmailError("Email should be between 3 and 50 characters");
+    } else {
+      // email should be valid
+      const regex = /^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$/;
+      if (!regex.test(formData.email)) {
+        setEmailError("Email should be valid");
+      } else {
+        emailError && setEmailError(null);
+      }
+    }
+
+    if (formData.password.length < 6 || formData.password.length > 50) {
+      setPasswordError("Password should be between 6 and 50 characters");
+    } else {
+      passwordError && setPasswordError(null);
+    }
+
+    formError && setFormError(null);
+
+    
+  }, [formData]);
+
+  if (isLoading) {
+    return <LoadingAnimation />;
+  }
 
   const inputCls =
     "border border-gray-300 p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-slate-400 focus:border-transparent";
@@ -114,7 +123,7 @@ const Signup = () => {
           value={formData.name}
           onChange={handleInputChange}
         />
-        <p className="text-red-500 text-lg">{nameError}</p>
+        {nameIsTouch && <p className="text-red-500 text-lg">{nameError}</p>}
         <input
           type="email"
           name="email"
@@ -123,7 +132,7 @@ const Signup = () => {
           value={formData.email}
           onChange={handleInputChange}
         />
-        <p className="text-red-500 text-lg">{emailError}</p>
+        {emailIsTouch && <p className="text-red-500 text-lg">{emailError}</p>}
         <input
           type="password"
           name="password"
@@ -132,12 +141,13 @@ const Signup = () => {
           value={formData.password}
           onChange={handleInputChange}
         />
-        <p className="text-red-500 text-lg">{passwordError}</p>
+        {passwordIsTouch && <p className="text-red-500 text-lg">{passwordError}</p>}
         <button
-          className="px-4 py-2 my-2 rounded-sm bg-slate-700 text-white hover:bg-slate-500"
+          disabled={isLoading}
+          className="px-4 py-2 my-2 rounded-sm bg-slate-700 text-white hover:bg-slate-500 disabled:bg-gray-300 disabled:cursor-not-allowed"
           type="submit"
         >
-          Signup
+         { isLoading? "Loading..." : "Signup"}
         </button>
         <p className="text-center my-2 p-4 text-black text-lg">
           If you already have an account, please{" "}

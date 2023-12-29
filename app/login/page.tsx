@@ -4,6 +4,7 @@ import { useRouter } from "next/navigation";
 import { signIn } from "next-auth/react";
 import { form } from "sanity/desk";
 import Link from "next/link";
+import LoadingAnimation from "@/components/UI/Loader";
 
 const Login = () => {
   const [formData, setFormData] = useState({
@@ -41,6 +42,10 @@ const Login = () => {
     const { name, value } = e.target;
 
     setFormData((prev) => ({ ...prev, [name]: value }));
+  }
+
+  if (loading) {
+    return <LoadingAnimation />;
   }
 
   const inputCls =
