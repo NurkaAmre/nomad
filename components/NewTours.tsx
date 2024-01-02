@@ -40,10 +40,10 @@ const Tours = ({ tours }: PropTypes) => {
     const activeClass =
       index === currentSlide ? "" : "opacity-85 backdrop-blur-lg";
 
-    return (
+   return (
       <li
         key={tour.id}
-        className={`mr-2 w-[90px] h-[100px] md:w-[180px] md:h-[200px] shadow-3xl rounded-md overflow-hidden ${activeClass}`}
+        className={`w-[80px] mt-2 md:mb-2 static h-[100px] md:w-[180px] md:h-[200px] shadow-3xl rounded-md overflow-hidden ${activeClass}`}
         onClick={() => handleCurrentSlide(index)}
       >
         <Image
@@ -57,6 +57,9 @@ const Tours = ({ tours }: PropTypes) => {
     );
   });
 
+  const toursPerPage = 4;
+  const toursForMobile = toursIcon.slice(0, toursPerPage)
+  
   useEffect(() => {
     const st = setInterval(() => {
       setCurrentSlide((prev) => (prev === tours.length - 1 ? 0 : prev + 1));
@@ -100,8 +103,8 @@ const Tours = ({ tours }: PropTypes) => {
         </div>
       </div>
 
-      <ul className="list-none flex flex-row justify-center md:justify-end absolute md:absolute md:w-[85%] md:bottom-0 md:right-4 gap-2 px-4 bottom-[-2]">
-        {toursIcon}
+      <ul className="list-none  flex flex-row justify-center md:justify-end absolute md:absolute md:w-[85%] md:bottom-0 md:right-4 gap-2 px-4 bottom-[-2]">
+        {window.innerWidth > 767 ? toursIcon : toursForMobile}
       </ul>
     </div>
   );
