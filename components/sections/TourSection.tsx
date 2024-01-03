@@ -9,7 +9,7 @@ const TourSection = () => {
   useEffect(() => {
     const fetchTours = async () => {
       try {
-        const tourData = await client.fetch('*[_type == "tour"]{ _id, title, description, "image": image.asset->url, duration, location, price }');
+        const tourData = await client.fetch('*[_type == "tour"]{ "id": _id, title, description, "image": image.asset->url, duration, location, price }');
         setTours(tourData);
       } catch (error) {
         console.error('Error fetching tours:', error);
