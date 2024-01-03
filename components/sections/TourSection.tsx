@@ -1,4 +1,4 @@
-'use client';
+'use client'
 import { useEffect, useState } from 'react';
 import { client } from "@/sanity/lib/client";
 import Tours from '@/components/NewTours';
@@ -9,12 +9,12 @@ const TourSection = () => {
   useEffect(() => {
     const fetchTours = async () => {
       try {
-        const tourData = await client.fetch('*[_type == "tour"]{ _id, title, description, "image": image.asset->url, author, topic }');
-      setTours(tourData);
+        const tourData = await client.fetch('*[_type == "tour"]{ _id, title, description, "image": image.asset->, duration, location, price }');
+        setTours(tourData);
       } catch (error) {
-      console.error('Error fetching tours:', error);
+        console.error('Error fetching tours:', error);
       }
-  };
+    };
 
     fetchTours();
   }, []);

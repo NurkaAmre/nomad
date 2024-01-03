@@ -96,10 +96,6 @@ const Tours = ({ tours }: PropTypes) => {
             {tours[currentSlide].topic}
           </h3>
           <p className="mt-4 text-animation">{tours[currentSlide].description}</p>
-          <div className="mt-4 flex gap-4 text-animation">
-            <Link href={`/tour/${tours[currentSlide].id}`} className="bg-[#4a81c4] text-white px-4 py-2 font-abhaya font-extrabold hover:bg-[#eee] hover:text-[#212125]">Read More</Link>
-            <Link href='/booking' className="text-black px-4 py-2 font-abhaya font-extrabold bg-[#eee] hover:bg-[#4a81c4] hover:text-[#eee]">Book Now</Link>
-          </div>
         </div>
       </div>
 
