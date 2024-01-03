@@ -23,7 +23,6 @@ const TourDetail = async({params}: PropTypes) => {
   }
 
   if (!tourDetails) return <PageNotFound />;
-console.log(tourDetails);
 
   const { id, title, description, image, duration, longDescription, location, price } = tourDetails;
 
@@ -31,7 +30,7 @@ console.log(tourDetails);
     <article id={id} className="pt-20 flex flex-col gap-4">
       <h1 className="text-center text-3xl p-4">{title}</h1>
       <h4 className="text-center p-4 font-abhaya">{description}</h4>
-      <div className="relative w-full h-[300px] md:h-[500px]">
+      <div className="relative w-full h-[300px] md:h-[800px]">
         <Image src={image} alt={title} fill={true} sizes={'1280px'} priority={true} />
       </div>
       <div className="p-4 md:p-6">
