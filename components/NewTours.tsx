@@ -4,15 +4,6 @@ import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import './Carousel.css';
 
-type TourItemType = {
-  id: number;
-  image: string;
-  author: string;
-  title: string;
-  topic: string;
-  description: string;
-};
-
 type PropTypes = {
   tours: TourItemType[];
 };
@@ -96,6 +87,7 @@ const Tours = ({ tours }: PropTypes) => {
             {tours[currentSlide].topic}
           </h3>
           <p className="mt-4 text-animation">{tours[currentSlide].description}</p>
+          <Link className="block my-4 px-4 py-2 text-white bg-black" href={`/tours/${tours[currentSlide].id}`}>Read More</Link>
         </div>
       </div>
 
