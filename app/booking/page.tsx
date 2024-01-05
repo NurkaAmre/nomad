@@ -1,5 +1,5 @@
 import { getServerSession } from "next-auth";
-import { authOptions } from "../api/auth/[...nextauth]/route";
+import nextAuthOptions from "@/lib/nextAuthOptions";
 import { redirect } from 'next/navigation';
 import BookingForm from "@/components/BookingForm";
 import { client } from "@/sanity/lib/client";
@@ -13,7 +13,7 @@ const Booking = async({searchParams}: PropTypes) => {
   const tripID = searchParams.trip_id;
 
   // check if user is logged in
-  const session = await getServerSession(authOptions)
+  const session = await getServerSession(nextAuthOptions)
   if (!session || !session.user || !session.user.id) {
     redirect(`/login?callback=/booking${tripID ? `?trip_id=${tripID}` : ""}`)
   }
