@@ -28,9 +28,12 @@ const places = {
       options: {
         list: [
           // Define the categories you want
-          { title: "Landscapes", value: "landscapes" },
-          { title: "Beaches", value: "beaches" },
-          { title: "Cities", value: "cities" },
+          { title: "Festival", value: "festival" },
+          { title: "Art & Culture", value: "artculture" },
+          { title: "Foods & Drink", value: "foodsdrink" },
+          { title: "Adventure", value: "adventure" },
+          { title: "Nature", value: "nature" },
+          { title: "Family", value: "family" },
           // Add more categories as needed
         ],
       },

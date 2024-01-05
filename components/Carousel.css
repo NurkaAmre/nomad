@@ -138,19 +138,12 @@
 /* arrows */
 .arrows {
   position: absolute;
-  top: 80%;
-  right: 60%;
   z-index: 100;
-  width: 300px;
-  max-width: 30%;
   display: flex;
-  gap: 1rem;
-  align-items: center;
+  justify-content: space-between;
   @media screen and (max-width: 678px) {
-      gap: 0.5rem;
-      bottom: -25%;
-        right: 35%;
-        gap: 3rem;
+    top: 35%;
+      gap: 310px;
     }
 }
 
@@ -174,8 +167,8 @@
 
 .arrows button:hover {
   background-color: transparent;
-  color: #212125;
-  border: #212125 solid 2px;
+  color: #fff;
+    border: #fff solid 2px;
 }
 
 /* animation */

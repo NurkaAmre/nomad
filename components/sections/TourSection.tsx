@@ -1,12 +1,28 @@
-import { GetTourData } from "@/lib/GetTourData";
-import Tours from "@/components/NewTours";
+'use client'
+import { useEffect, useState } from 'react';
+import { client } from "@/sanity/lib/client";
+import Tours from '@/components/NewTours';
 
-const TourSection = async () => {
-  const tourData = await GetTourData();
+const TourSection = () => {
+  const [tours, setTours] = useState([]);
+
+  useEffect(() => {
+    const fetchTours = async () => {
+      try {
+        const tourData = await client.fetch('*[_type == "tour"]{ _id, title, description, "image": image.asset->, duration, location, price }');
+        setTours(tourData);
+      } catch (error) {
+        console.error('Error fetching tours:', error);
+      }
+    };
+
+    fetchTours();
+  }, []);
+
   return (
     <section className="mb-10">
-      {tourData.length > 0 ? (
-        <Tours tours={tourData} />
+      {tours.length > 0 ? (
+        <Tours tours={tours} />
       ) : (
         <p className="text-red-500 text-lg p-4 text-center">
           No Tours Available Now
