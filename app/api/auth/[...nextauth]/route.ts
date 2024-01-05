@@ -3,7 +3,7 @@ import { SanityCredentials, SanityAdapter } from "next-auth-sanity";
 import { client } from "@/sanity/lib/client";
 import { SanityClient } from "@sanity/client";
 
-const authOptions: NextAuthOptions = {
+export const authOptions: NextAuthOptions = {
   providers: [
     SanityCredentials(client as SanityClient),
   ],
