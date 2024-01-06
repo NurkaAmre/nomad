@@ -7,7 +7,7 @@ import { FaSquareXTwitter } from "react-icons/fa6";
 const Footer = () => {
   const year = new Date().getFullYear();
   return (
-    <footer className="mt-10 bg-[#131C27] pt-6">
+    <footer className=" bg-[#131C27] pt-6">
       <div className="flex flex-col md:flex-row md:justify-between">
 
         <div className="flex-1 mb-6 md:mb-0 flex flex-col items-center border-0 border-b-2 mx-8 w-[300px] rounded-lg md:border-b-0 py-6 px-4">
