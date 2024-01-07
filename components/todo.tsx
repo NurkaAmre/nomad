@@ -3,6 +3,7 @@ import { client } from "@/sanity/lib/client";
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import './todo.css';
 
 interface Place {
   title: string;
@@ -13,7 +14,8 @@ interface Place {
 
 const Todo = () => {
   const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
-const [options, setOptions] = useState<Place[]>([] as Place[]);
+  const [options, setOptions] = useState<Place[]>([] as Place[]);
+  
   
   useEffect(() => {
     const defaultExpandedIndex = 0;
@@ -29,11 +31,9 @@ const [options, setOptions] = useState<Place[]>([] as Place[]);
         category
       }`);
       setOptions(todoData);
-      console.log('Fetched data:', todoData);
     } catch (error) {
       console.error('Error fetching data: ', error);
       setOptions([]);
-      console.log('Fetched data:', options.length);
     }
   };
 
@@ -60,45 +60,45 @@ const [options, setOptions] = useState<Place[]>([] as Place[]);
     <div className='py-10'>
       <div className='flex flex-col text-white justify-center items-center'>
         <h2 className='text-center text-4xl md:text-5xl font-abhaya'>To Do Things</h2>
-        <ul className='grid grid-cols-2 gap-4 my-4 mx-4 md:flex md:justify-between md:gap-[4rem] md:my-4'>
+        <ul className='flex flex-wrap justify-center items-center my-4 relative'>
            <li>
             <button
-              className='rounded-full border-2 bg-[#6491C9] md:text-xl font-abhaya font-light px-6 py-2 hover:bg-transparent hover:border-[#6491C9]'
+              className='bttn'
               onClick={() => handleCategoryClick('festival')}>
               Festival
             </button>
           </li>
            <li>
             <button
-              className='rounded-full border-2 bg-[#6491C9] md:text-xl font-abhaya font-light px-6 py-2 hover:bg-transparent hover:border-[#6491C9]'
+              className='bttn'
               onClick={() => handleCategoryClick('artculture')}>
               Art & Culture
             </button>
           </li>
            <li>
             <button
-              className='rounded-full border-2 bg-[#6491C9] md:text-xl font-abhaya font-light px-6 py-2 hover:bg-transparent hover:border-[#6491C9]'
+              className='bttn'
               onClick={() => handleCategoryClick('foodsdrink')}>
               Foods & Drink
             </button>
           </li>
           <li>
             <button
-              className='rounded-full border-2 bg-[#6491C9] md:text-xl font-abhaya font-light px-6 py-2 hover:bg-transparent hover:border-[#6491C9]'
+              className='bttn'
               onClick={() => handleCategoryClick('adventure')}>
               Adventure
             </button>
           </li>
           <li>
             <button
-              className='rounded-full border-2 bg-[#6491C9] md:text-xl font-abhaya font-light px-6 py-2 hover:bg-transparent hover:border-[#6491C9]'
+              className='bttn'
               onClick={() => handleCategoryClick('nature')}>
               Nature
             </button>
           </li>
           <li>
              <button
-              className='rounded-full border-2 bg-[#6491C9] md:text-xl font-abhaya font-light px-6 py-2 hover:bg-transparent hover:border-[#6491C9]'
+              className='bttn'
               onClick={() => handleCategoryClick('monastery')}>
               Monastery
             </button>
