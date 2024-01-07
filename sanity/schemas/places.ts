@@ -10,14 +10,12 @@ const places = {
       title: "Title",
       type: "string",
       description: "Descriptive title for the picture",
-      validation: Rule => Rule.required().min(5).error("Min 10 characters").max(255).error("Max 50 characters"),
     }),
     defineField({
       name: "image",
       title: "Image",
       type: "image",
       description: "Upload the picture here",
-      validation: Rule => Rule.required(),
     }),
     defineField({
       name: "category",
@@ -33,19 +31,17 @@ const places = {
           { title: "Foods & Drink", value: "foodsdrink" },
           { title: "Adventure", value: "adventure" },
           { title: "Nature", value: "nature" },
-          { title: "Family", value: "family" },
+          { title: "Monastery", value: "monastery" },
           // Add more categories as needed
         ],
       },
-      initialValue: "landscapes",
-      validation: Rule => Rule.required(),
+      initialValue: "Festival",
     }),
     defineField({
       name: "description",
       title: "Description",
       type: "text",
       description: "Description of the picture",
-      validation: Rule => Rule.required().min(50).error("Min 50 characters"),
     })
   ],
 };

@@ -15,8 +15,8 @@ const Header = () => {
       <div className='flex justify-between'>
         <Link href='/'> <h1 className='font-poller tracking-wider font-semibold text-3xl text-[#797DA5] md:px-4 md:text-4xl'>Nomads.</h1></Link>
         <div className='md:hidden text-3xl'>
-          <button onClick={toggleMenu} className='text-white'>
-            <AiOutlineMenu />
+          <button onClick={toggleMenu} className='text-white bg-transparent'>
+           <AiOutlineMenu />
           </button>
         </div>
       </div>

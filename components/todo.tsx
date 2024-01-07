@@ -1,70 +1,50 @@
 'use client'
-import React, { useState } from 'react';
+import { client } from "@/sanity/lib/client";
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import art from '@/public/images/art.jpg';
-import food from '@/public/images/food.jpg';
-import festival from '@/public/images/festival.jpg';
-import icefestival from '@/public/images/icefestival.jpg';
-import yak from '@/public/images/yak.jpeg';
-import camel from '@/public/images/camel.jpeg';
-import arul from '@/public/images/arul.jpg';
-import boorsog from '@/public/images/boorsog.webp';
-import buuz from '@/public/images/buuz.webp';
-import cheese from '@/public/images/cheese.jpg';
 
-
-const options = [
-  {
-    image: art,
-    mainText: 'Art & Culture',
-    subText: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-  },
-  {
-    image: food,
-    mainText: 'Food & Drink',
-    subText: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-  },
-  {
-    image: festival,
-    mainText: 'Festivals & Events',
-    subText: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-  },
-  {
-    image: icefestival,
-    mainText: 'Festivals & Events',
-    subText: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-  },
-   {
-    image: yak,
-    mainText: 'Festivals & Events',
-    subText: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-  },
-  {
-    image: camel,
-    mainText: 'Festivals & Events',
-    subText: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-  },
-  {
-    image: arul,
-    mainText: 'Festivals & Events',
-    subText: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-  },
-  {
-    image: boorsog,
-    mainText: 'Festivals & Events',
-    subText: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-  },
-  {
-    image: buuz,
-    mainText: 'Festivals & Events',
-    subText: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-  },
-];
+interface Place {
+  title: string;
+  image: string;
+  description: string;
+  category: string;
+}
 
 const Todo = () => {
-  const [expandedIndex, setExpandedIndex] = useState<number | null>(null); // Set type to number or null
+  const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
+const [options, setOptions] = useState<Place[]>([] as Place[]);
+  
+  useEffect(() => {
+    const defaultExpandedIndex = 0;
+    setExpandedIndex(defaultExpandedIndex);
+  }, []);
 
+  const fetchDataByCategory = async (category: string) => {
+    try {
+      const todoData: Place[] = await client.fetch(`*[_type == "places" && category == "${category}"]{
+        title,
+        "image": image.asset->url,
+        description,
+        category
+      }`);
+      setOptions(todoData);
+      console.log('Fetched data:', todoData);
+    } catch (error) {
+      console.error('Error fetching data: ', error);
+      setOptions([]);
+      console.log('Fetched data:', options.length);
+    }
+  };
+
+  const handleCategoryClick = (category: string) => {
+    fetchDataByCategory(category);
+  };
+
+  useEffect(() => {
+    fetchDataByCategory('festival');
+  }, []);
+  
   const handleHover = (index: number) => {
     setExpandedIndex(index);
   };
@@ -82,22 +62,46 @@ const Todo = () => {
         <h2 className='text-center text-4xl md:text-5xl font-abhaya'>To Do Things</h2>
         <ul className='grid grid-cols-2 gap-4 my-4 mx-4 md:flex md:justify-between md:gap-[4rem] md:my-4'>
            <li>
-            <button className='rounded-full border-2 bg-[#6491C9] md:text-xl font-abhaya font-light px-6 py-2 hover:bg-transparent hover:border-[#6491C9]'>Festival</button>
+            <button
+              className='rounded-full border-2 bg-[#6491C9] md:text-xl font-abhaya font-light px-6 py-2 hover:bg-transparent hover:border-[#6491C9]'
+              onClick={() => handleCategoryClick('festival')}>
+              Festival
+            </button>
           </li>
            <li>
-            <button className='rounded-full border-2 bg-[#6491C9] md:text-xl font-abhaya font-light px-6 py-2 hover:bg-transparent hover:border-[#6491C9]'>Art & Culture</button>
+            <button
+              className='rounded-full border-2 bg-[#6491C9] md:text-xl font-abhaya font-light px-6 py-2 hover:bg-transparent hover:border-[#6491C9]'
+              onClick={() => handleCategoryClick('artculture')}>
+              Art & Culture
+            </button>
           </li>
            <li>
-            <button className='rounded-full border-2 bg-[#6491C9] md:text-xl font-abhaya font-light px-4 md:px-6 py-2 hover:bg-transparent hover:border-[#6491C9]'>Foods & Drink</button>
+            <button
+              className='rounded-full border-2 bg-[#6491C9] md:text-xl font-abhaya font-light px-6 py-2 hover:bg-transparent hover:border-[#6491C9]'
+              onClick={() => handleCategoryClick('foodsdrink')}>
+              Foods & Drink
+            </button>
           </li>
           <li>
-            <button className='rounded-full border-2 bg-[#6491C9] md:text-xl font-abhaya font-light px-6 py-2 hover:bg-transparent hover:border-[#6491C9]'>Adventure</button>
+            <button
+              className='rounded-full border-2 bg-[#6491C9] md:text-xl font-abhaya font-light px-6 py-2 hover:bg-transparent hover:border-[#6491C9]'
+              onClick={() => handleCategoryClick('adventure')}>
+              Adventure
+            </button>
           </li>
           <li>
-            <button className='rounded-full border-2 bg-[#6491C9] md:text-xl font-abhaya font-light px-6 py-2 hover:bg-transparent hover:border-[#6491C9]'>Nature</button>
+            <button
+              className='rounded-full border-2 bg-[#6491C9] md:text-xl font-abhaya font-light px-6 py-2 hover:bg-transparent hover:border-[#6491C9]'
+              onClick={() => handleCategoryClick('nature')}>
+              Nature
+            </button>
           </li>
           <li>
-            <button className='rounded-full border-2 bg-[#6491C9] md:text-xl font-abhaya font-light px-6 py-2 hover:bg-transparent hover:border-[#6491C9]'>Family</button>
+             <button
+              className='rounded-full border-2 bg-[#6491C9] md:text-xl font-abhaya font-light px-6 py-2 hover:bg-transparent hover:border-[#6491C9]'
+              onClick={() => handleCategoryClick('monastery')}>
+              Monastery
+            </button>
           </li>
         </ul>
         <div className="flex md:flex-row md:flex-wrap md:gap-4 gap-1 justify-center flex-col items-center">
@@ -110,16 +114,18 @@ const Todo = () => {
               onMouseEnter={() => handleHover(index)}
             onClick={handleClick}
             >
-              <div className="image-container">
-                <Image src={option.image} alt={`Option ${index + 1}`} layout="fill" objectFit="cover"/>
+              <div className="image-container relative w-full h-full">
+                 {option.image && (
+                  <Image src={option.image} alt={`Option ${index + 1}`} layout="fill" objectFit="cover"/>
+                )}
               </div>
               <div className={`label absolute bottom-4 left-4 ${expandedIndex === index ? '' : 'hidden'}`}>
                 <div className="icon flex items-center justify-center w-10 h-10 rounded-full bg-white text-defaultBackground">
                   <i></i>
                 </div>
                 <div className="info flex flex-col justify-center ml-2 text-white whitespace-pre">
-                  <div className="main font-bold text-lg">{option.mainText}</div>
-                  <div className="sub px-2">{option.subText}</div>
+                   <div className="main font-bold text-lg">{option.title}</div>
+                  {/* <div className="sub px-2">{option.description}</div> */}
                 </div>
               </div>
             </Link>
