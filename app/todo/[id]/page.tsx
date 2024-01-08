@@ -11,13 +11,9 @@ type TodoItemType = {
   id: string;
   title: string;
   description: string;
-  image: {
-    asset: {
-      url: string;
-    };
+  image:  string;
   };
-  category: string;
-};
+ 
 
 const TodoDetail = async ({ params }: PropTypes) => {
   const todoId = params.id;
@@ -27,7 +23,7 @@ const TodoDetail = async ({ params }: PropTypes) => {
 
   try {
     todoDetails = await client.fetch(
-      `*[_type == "place" && _id =="${todoId}"][0]{"id": _id, title, description, "image": image.asset->url}`
+      `*[_type == "places" && _id =="${todoId}"][0]{"id": _id, title, description, "image": image.asset->url}`
     );
   } catch (error) {
     console.log('Error fetching todo details:', error);
@@ -37,13 +33,12 @@ const TodoDetail = async ({ params }: PropTypes) => {
   if (!todoDetails) return <PageNotFound />;
 
   const { id, title, description, image } = todoDetails;
-  const imageUrl = image.asset.url;
 
   return (
     <article id={id} className="flex">
       <div className='md:flex-1'>
         <div className='relative h-full'>
-          <Image src={imageUrl} layout="fill" objectFit="cover" alt={title} />
+          <Image src={image} layout="fill" objectFit="cover" alt={title} />
         </div>
       </div>
       <div className='md:flex-1 md:my-10 mt-20 mb-10 flex flex-col items-center justify-center' >
