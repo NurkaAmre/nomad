@@ -6,6 +6,7 @@ import Image from 'next/image';
 import './todo.css';
 
 interface Place {
+  id: string;
   title: string;
   image: string;
   description: string;
@@ -25,6 +26,7 @@ const Todo = () => {
   const fetchDataByCategory = async (category: string) => {
     try {
       const todoData: Place[] = await client.fetch(`*[_type == "places" && category == "${category}"]{
+        "id": _id,
         title,
         "image": image.asset->url,
         description,
@@ -106,13 +108,14 @@ const Todo = () => {
         </ul>
         <div className="flex md:flex-row md:flex-wrap md:gap-4 gap-1 justify-center flex-col items-center">
           {options.map((option, index) => (
-            <Link href='#'
+            <Link
+              href={`/todo/${option.id}`}
               key={index}
               className={`option relative overflow-hidden  w-[370px] md:h-[500px] rounded-md cursor-pointer transition duration-500 ease-in-out ${
                 expandedIndex === index ? 'md:w-[500px] h-[400px]' : 'md:w-24 h-32'
               }`}
               onMouseEnter={() => handleHover(index)}
-            onClick={handleClick}
+              onClick={handleClick}
             >
               <div className="image-container relative w-full h-full">
                  {option.image && (
