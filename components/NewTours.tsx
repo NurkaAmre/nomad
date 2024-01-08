@@ -4,15 +4,6 @@ import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import './Carousel.css';
 
-type TourItemType = {
-  id: number;
-  image: string;
-  author: string;
-  title: string;
-  topic: string;
-  description: string;
-};
-
 type PropTypes = {
   tours: TourItemType[];
 };
@@ -75,7 +66,7 @@ const Tours = ({ tours }: PropTypes) => {
         <button onClick={prevSlide} className="right-0 md:hidden lg:hidden">&gt;</button>
       </div>
       <div
-        className="md:h-[100vh] relative"
+        className="h-[100vh] relative"
         style={{
           backgroundImage: `url(${tours[currentSlide].image})`,
           backgroundRepeat: "no-repeat",
@@ -96,12 +87,15 @@ const Tours = ({ tours }: PropTypes) => {
             {tours[currentSlide].topic}
           </h3>
           <p className="mt-4 text-animation">{tours[currentSlide].description}</p>
+          <div className='buttons mt-4 flex gap-6'>
+            <Link className="btn py-2 px-4 font-bold md:text-lg" href={`/tours/${tours[currentSlide].id}`}>Read More</Link>
+            <Link href='/booking' className='btn2 py-2 px-4 font-bold md:text-lg'>Book Now</Link>
+         </div>
         </div>
-      </div>
-
-      <ul className="list-none  flex flex-row justify-center md:justify-end absolute md:absolute md:w-[85%] md:bottom-0 md:right-4 gap-2 px-4 bottom-[-2]">
+        <ul className="list-none  flex flex-row justify-center md:justify-end absolute md:w-[85%] md:bottom-0 md:right-4 gap-2 px-4 bottom-8">
         {window.innerWidth > 767 ? toursIcon : toursForMobile}
       </ul>
+      </div>
     </div>
   );
 };

@@ -11,11 +11,15 @@ interface PopularPlacesType {
 }
 
 type TourItemType = {
-  id: number;
+  id: string;
   image: string;
   author: string;
   title: string;
   topic: string;
+  longDescription: string;
+  duration: string;
+  location: string;
+  price: number;
   description: string;
 };
 
