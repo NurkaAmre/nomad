@@ -1,6 +1,6 @@
 export default {
-  name: 'popularPlace',
-  title: 'Popular Places',
+  name: 'popular',
+  title: 'Popular',
   type: 'document',
   fields: [
     {
