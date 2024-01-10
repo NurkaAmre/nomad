@@ -1,4 +1,6 @@
-export default {
+import { defineField } from "sanity";
+
+const popularPlace = {
   name: 'popular',
   title: 'Popular',
   type: 'document',
@@ -16,13 +18,12 @@ export default {
       description: 'A brief description of the popular place',
     },
     {
-      name: 'photo',
-      title: 'Photo',
+      name: 'image',
+      title: 'Image',
       type: 'image',
       description: 'The photo of the popular place',
-      options: {
-        hotspot: true // Enables hotspot for image cropping if necessary
-      },
-    }
+    },
   ]
 }
+
+export default popularPlace;
