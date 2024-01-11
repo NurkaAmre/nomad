@@ -76,20 +76,20 @@ const Tours = ({ tours }: PropTypes) => {
       >
          
         <div className="md:mx-[10rem] bg-black opacity-50 min-h-[25rem] h-[100%] p-10">
-          <h4 className="text-white font-bold tracking-[10px] md:mt-[1rem] md:text-2xl text-base text-animation">
+          <h4 className="text-white font-bold font-abhaya tracking-[10px] md:mt-[1rem] md:text-2xl text-base text-animation">
             {tours[currentSlide].author}
           </h4>
-          <h2 className="text-white leading-[1.3em] text-[2em] md:text-[5em] font-bold text-animation">
+          <h2 className="text-white leading-[1.3em] text-[2em] md:text-[5em] font-abril font-bold text-animation">
             {tours[currentSlide].title}
             <br />
           </h2>
-          <h3 className="text-[#f1683a] leading-[1.3em] md:text-[5em] text-[4em] font-bold text-animation">
+          <h3 className="text-[#f1683a] font-abril leading-[1.3em] md:text-[5em] text-[4em] font-bold text-animation">
             {tours[currentSlide].topic}
           </h3>
           <p className="mt-4 text-animation">{tours[currentSlide].description}</p>
           <div className='buttons mt-4 flex gap-6'>
-            <Link className="btn py-2 px-4 font-bold md:text-lg" href={`/tours/${tours[currentSlide].id}`}>Read More</Link>
-            <Link href='/booking' className='btn2 py-2 px-4 font-bold md:text-lg'>Book Now</Link>
+            <Link className="btn py-2 px-4 font-bold uppercase md:text-lg" href={`/tours/${tours[currentSlide].id}`}>Read More</Link>
+            <Link href='/booking' className='btn2 py-2 uppercase px-4 font-bold md:text-lg'>Book Now</Link>
          </div>
         </div>
         <ul className="list-none  flex flex-row justify-center md:justify-end absolute md:w-[85%] md:bottom-0 md:right-4 gap-2 px-4 bottom-8">

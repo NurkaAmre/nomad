@@ -36,7 +36,7 @@ const TourDetail = async({params}: PropTypes) => {
     </div>
       <div className='md:flex-1 md:my-10 mt-20 mb-10 flex flex-col items-center justify-center' >
         <div className="flex flex-col px-10 justify-center ">
-          <h1 className="text-center text-3xl pt-10">{title}</h1>
+          <h1 className="text-center text-3xl font-abril mt-10 md:mt-20">{title}</h1>
           <h4 className="text-center p-4 font-abhaya">{description}</h4>
           <p>{longDescription}</p>
           <div className='border border-gray-300 mt-6'>

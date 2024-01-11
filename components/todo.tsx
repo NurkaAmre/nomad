@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import './todo.css';
+import { SiYourtraveldottv } from "react-icons/si";
 
 interface Place {
   id: string;
@@ -122,11 +123,11 @@ const Todo = () => {
                   <Image src={option.image} alt={`Option ${index + 1}`} layout="fill" objectFit="cover"/>
                 )}
               </div>
-              <div className={`label absolute bottom-4 left-4 ${expandedIndex === index ? '' : 'hidden'}`}>
-                <div className="icon flex items-center justify-center w-10 h-10 rounded-full bg-white text-defaultBackground">
-                  <i></i>
+              <div className={`label absolute top-4 left-4 ${expandedIndex === index ? '' : 'hidden'}`}>
+                <div className="icon flex justify-center w-10 h-10 rounded-full bg-black text-defaultBackground">
+                  <SiYourtraveldottv className='text-2xl text-[#7c9de5]'/>
                 </div>
-                <div className="info flex flex-col justify-center ml-2 text-white whitespace-pre">
+                <div className="info flex flex-col justify-center ml-2 whitespace-pre" style={{ color: 'white', textShadow: '1px 1px 2px black' }}>
                    <div className="main font-bold text-lg">{option.title}</div>
                   {/* <div className="sub px-2">{option.description}</div> */}
                 </div>

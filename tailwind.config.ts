@@ -25,6 +25,8 @@ module.exports = {
         'abhaya': ["var(--font-abhaya)"],
         'abril': ["var(--font-abril)"],
         'poller': ["var(--font-poller)"],
+        'poppins': ["var(--font-poppins)"],
+
       },
       colors: {
         border: "hsl(var(--border))",
