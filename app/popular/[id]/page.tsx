@@ -2,6 +2,7 @@ import React from 'react';
 import { client } from '@/sanity/lib/client';
 import PageNotFound from '@/components/UI/PageNotFound';
 import Image from 'next/image';
+import Link from 'next/link';
 
 type PropTypes = {
   params: { id: string };
@@ -35,17 +36,23 @@ const PlacesDetail = async ({ params }: PropTypes) => {
   const { id, title, description, image } = placeDetails;
 
   return (
-    <article id={id} className="flex">
-      <div className='md:flex-1'>
-        <div className='relative h-full'>
-          <Image src={image} layout="fill" objectFit="cover" alt={title} />
+    <article id={id} className="flex flex-wrap justify-center min-h-screen">
+      <div className="flex-1 w-full max-w-full relative">
+        <div
+          className="w-full h-full bg-cover bg-center relative filter shadow-xl"
+          style={{
+            backgroundImage: `url(${image})`,
+          }}
+        >
+          <div className="absolute inset-0 backdrop-blur-md opacity-80 md:w-1/2 rounded-l-2xl" />
+          <div className="absolute top-0 left-0 md:w-1/2 h-full flex items-center justify-center text-white text-center">
+            <div className="md:mx-20">
+              <h1 className="md:text-5xl text-3xl md:mb-10 mt-20 font-poller font-semibold leading-9 md:mt-0 mx-4 text-shadow-lg">{title}</h1>
+              <p className="text-sm md:text-lg px-4 mt-6 pb-12 text-shadow-sm">{description}</p>
+               <Link className='bg-[#7097ea9b] md:text-lg font-bold py-2 px-4 md:px-6 md:py-4 uppercase mt-8 items-center hover:bg-[#61779ad]' href='/booking'>Book Now</Link>
+            </div>
+          </div>
         </div>
-      </div>
-      <div className='md:flex-1 md:my-10 mt-20 mb-10 flex flex-col items-center justify-center' >
-        <div className="flex flex-col px-10 justify-center ">
-          <h1 className="text-center text-3xl pt-10">{title}</h1>
-          <h4 className="text-center p-4 font-abhaya">{description}</h4>
-        </div> 
       </div>
     </article>
   );

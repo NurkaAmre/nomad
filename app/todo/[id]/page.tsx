@@ -47,7 +47,7 @@ const TodoDetail = async ({ params }: PropTypes) => {
           <div className="absolute top-0 left-0 md:w-1/2 h-full flex items-center justify-center text-white text-center">
             <div className="md:mx-20">
               <h1 className="md:text-5xl text-3xl md:mb-10 font-poller font-semibold leading-9 text-shadow-lg">{title}</h1>
-              <p className="text-sm md:text-lg px-4 my-6 text-shadow-sm">{description}</p>
+              <p className="text-sm md:text-lg px-4 mt-6 pb-12 text-shadow-sm">{description}</p>
                <Link className='bg-[#7797de] md:text-lg font-bold py-2 px-4 md:px-6 md:py-4 uppercase mt-8 items-center hover:bg-[#61779ad] ' href='/booking'>Book Now</Link>
             </div>
           </div>
