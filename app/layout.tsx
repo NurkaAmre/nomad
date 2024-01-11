@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Poller_One, Abril_Fatface, Abhaya_Libre } from "next/font/google";
+import { Poller_One, Abril_Fatface, Abhaya_Libre, Poppins } from "next/font/google";
 import "./globals.css";
 import AuthProvider from "@/components/Layout/AuthProvider";
 import Header from "@/components/header";
@@ -20,6 +20,11 @@ const abrilFatface = Abril_Fatface({
   weight: "400",
   variable: "--font-abril",
 });
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-poppins",
+});
 
 export const metadata: Metadata = {
   title: "Nomads App",
@@ -37,7 +42,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${abrilFatface.variable} ${pollerOne.variable} ${abhayaLibre.variable}`}
+        className={`${abrilFatface.variable} ${pollerOne.variable} ${abhayaLibre.variable} ${poppins.variable}`}
       >
         <AuthProvider>
           <Header />
