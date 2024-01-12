@@ -2,12 +2,32 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { AiOutlineMenu, AiOutlineSearch } from 'react-icons/ai';
+import { client } from "@/sanity/lib/client";
+import SearchBar from './UI/SearchBar';
+
+type SanityDocument = {
+  _id: string;
+  title: string;
+  image: string; // Assuming it's a URL or some identifier
+  category: string;
+  description: string;
+};
 
 const Header = () => {
   const [showMenu, setShowMenu] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
+  const [searchResults, setSearchResults] = useState([]);
 
   const toggleMenu = () => {
     setShowMenu((prev) => !prev);
+  };
+
+   const handleSearch = async () => {
+    const response = await client.fetch(
+      `*[_type == 'places' && title match $query]`,
+      { query: searchQuery }
+    );
+    setSearchResults(response);
   };
 
   return (
@@ -37,14 +57,7 @@ const Header = () => {
           <Link href={'#'} className='py-2 px-4 hover:bg-[#6179ad] hover:rounded-full'>Services</Link>
         </li>
       </ul>
-      <div className='flex mt-2 md:mt-0 rounded-full px-1 mx-6 justify-center items-center w-4/3 md:w-1/6 bg-slate-50'>
-        <AiOutlineSearch className='text-gray-700 text-3xl' />
-        <input
-          type='text'
-          placeholder='Search'
-          className='font-aloe text-xl rounded-full py-1 bg-slate-50 px-1 outline-none border-0 w-full text-gray-900'
-        />
-      </div>
+      <SearchBar />
     </header>
   );
 };
