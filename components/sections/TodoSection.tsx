@@ -3,7 +3,7 @@ import { client } from "@/sanity/lib/client";
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import './todo.css';
+import classes from './TodoSection.module.css'
 import { SiYourtraveldottv } from "react-icons/si";
 
 interface Place {
@@ -66,42 +66,42 @@ const Todo = () => {
         <ul className='flex flex-wrap justify-center items-center my-4 relative'>
            <li>
             <button
-              className='bttn'
+              className={classes.bttn}
               onClick={() => handleCategoryClick('festival')}>
               Festival
             </button>
           </li>
            <li>
             <button
-              className='bttn'
+              className={classes.bttn}
               onClick={() => handleCategoryClick('artculture')}>
               Art & Culture
             </button>
           </li>
            <li>
             <button
-              className='bttn'
+              className={classes.bttn}
               onClick={() => handleCategoryClick('foodsdrink')}>
               Foods & Drink
             </button>
           </li>
           <li>
             <button
-              className='bttn'
+              className={classes.bttn}
               onClick={() => handleCategoryClick('adventure')}>
               Adventure
             </button>
           </li>
           <li>
             <button
-              className='bttn'
+              className={classes.bttn}
               onClick={() => handleCategoryClick('nature')}>
               Nature
             </button>
           </li>
           <li>
              <button
-              className='bttn'
+              className={classes.bttn}
               onClick={() => handleCategoryClick('monastery')}>
               Monastery
             </button>
