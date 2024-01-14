@@ -45,7 +45,7 @@ const Header = () => {
           animate={{opacity: 1, y: 0, scale: 1}}
           exit={{opacity: 0, y: -100, scale: 0}}
           transition={{
-            duration: 0.5,
+            duration: 0.2,
             ease: easeInOut
           }}
           className={`flex md:hidden flex-col md:flex-row tracking-wider md:gap-10 md:text-xl text-xl md:mt-2`}
