@@ -1,5 +1,5 @@
 
-const CustomErrorComponent = ({title, message}: {title?: string, message?: string}) => {
+const CustomErrorComponent = ({title, message, isFixed=true}: {title?: string, message?: string, isFixed?: boolean}) => {
 
   return <div className="fixed h-screen w-full z-10 flex flex-col items-center justify-center p-4">
     <div className="w-full md:w-[500px] max-w-full rounded-lg">
