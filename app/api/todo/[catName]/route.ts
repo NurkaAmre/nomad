@@ -8,7 +8,7 @@ export const GET = async (req: Request, context: any) => {
   }
   try {
     const todoData: Place[] =
-      await client.fetch(`*[_type == "places" && category == "${params.catName}"][0...5]{
+      await client.fetch(`*[_type == "places" && category == "${params.catName}"][0...8]{
         "id": _id,
         title,
         "image": image.asset->url,

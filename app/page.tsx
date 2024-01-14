@@ -5,6 +5,7 @@ import TodoSection from '@/components/sections/TodoSection'
 import PopularPlaces from '@/components/sections/PopularPlaces'
 import FaqSection from '@/components/sections/FaqSection'
 import TourSection from '@/components/sections/TourSection'
+import { Suspense } from 'react'
 
 
 export default function Home() {
@@ -14,7 +15,9 @@ export default function Home() {
       <CountryInfo />
       <Services />
       <TourSection />
+      <Suspense fallback={<p>Loading...</p>}>
       <TodoSection />
+      </Suspense>
       <PopularPlaces />
       <FaqSection />
     </>
