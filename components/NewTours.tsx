@@ -34,7 +34,7 @@ const Tours = ({ tours }: PropTypes) => {
    return (
       <li
         key={tour.id}
-        className={`w-[80px] mt-2 md:mb-2 static h-[100px] md:w-[180px] md:h-[200px] shadow-3xl rounded-md overflow-hidden ${activeClass}`}
+        className={`w-[80px] mt-2 md:mb-2 static h-[100px] md:w-[110px] md:h-[130px] shadow-3xl rounded-md overflow-hidden ${activeClass}`}
         onClick={() => handleCurrentSlide(index)}
       >
         <Image
@@ -57,7 +57,7 @@ const Tours = ({ tours }: PropTypes) => {
     }, 5000);
 
     return () => clearInterval(st);
-  }, [currentSlide]);
+  }, [currentSlide, tours]);
 
   return (
     <div className="relative">
