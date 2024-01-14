@@ -1,9 +1,7 @@
-'use client'
 import Image from "next/image";
-import { GetPopularPlacesData } from "@/lib/GetPopularPlacesData";
 import Link from "next/link";
 import { client } from "@/sanity/lib/client";
-import React, { useState, useEffect } from 'react';
+import CustomErrorComponent from "../UI/CustomErrorComponent";
 
 interface Place {
   id: string;
@@ -21,25 +19,23 @@ interface Place {
   description: string;
 }
 
-const PopularPlaces: React.FC = () => {
-  const [places, setPlaces] = useState<Place[]>([]);
+  
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const placeData: Place[] = await client.fetch(`*[_type == "popular"]{
-        "id": _id,
-        title,
-        "image": image.asset->url,
-    }`);
-    setPlaces(placeData);
-  } catch (error) {
-    console.error('Error fetching data: ', error);
-    setPlaces([]);
+const PopularPlaces: React.FC = async() => {
+  let places: Place[];
+  try {
+
+     places = await client.fetch(`*[_type == "popular"]{
+      "id": _id,
+      title,
+      "image": image.asset->url,
+  }`);
+
+
+  } catch (error:any){
+    return <section className="w-full h-[5rem] relative" id="todo"><CustomErrorComponent isFixed={false} title="An Error occurred" message="Error fetching data" /></section>
+    
   }
-};
-    fetchData();
-  }, []);
 
   const popularPlacesContent = places.map((popularPlace: Place, index: number) => {
   let itemClass = "col-span-1 row-span-1";
