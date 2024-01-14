@@ -92,8 +92,11 @@ const Tours = ({ tours }: PropTypes) => {
             <Link href='/booking' className='btn2 py-2 uppercase px-4 font-bold md:text-lg'>Book Now</Link>
          </div>
         </div>
-        <ul className="list-none  flex flex-row justify-center md:justify-end absolute md:w-[85%] md:bottom-0 md:right-4 gap-2 px-4 bottom-8">
-        {window.innerWidth > 767 ? toursIcon : toursForMobile}
+        <ul className="hidden md:flex list-none flex-row justify-center md:justify-end absolute md:w-[85%] md:bottom-0 md:right-4 gap-2 px-4 bottom-8">
+        { toursIcon}
+      </ul>
+        <ul className="list-none  flex flex-row justify-center md:justify-end md:hidden absolute md:w-[85%] md:bottom-0 md:right-4 gap-2 px-4 bottom-8">
+        { toursForMobile}
       </ul>
       </div>
     </div>
