@@ -1,33 +1,14 @@
 'use client'
 import React, { useState } from 'react';
 import Link from 'next/link';
-import { AiOutlineMenu, AiOutlineSearch } from 'react-icons/ai';
-import { client } from "@/sanity/lib/client";
+import { AiOutlineMenu } from 'react-icons/ai';
 import SearchBar from './UI/SearchBar';
-
-type SanityDocument = {
-  _id: string;
-  title: string;
-  image: string; // Assuming it's a URL or some identifier
-  category: string;
-  description: string;
-};
 
 const Header = () => {
   const [showMenu, setShowMenu] = useState(false);
-  const [searchQuery, setSearchQuery] = useState('');
-  const [searchResults, setSearchResults] = useState([]);
 
   const toggleMenu = () => {
     setShowMenu((prev) => !prev);
-  };
-
-   const handleSearch = async () => {
-    const response = await client.fetch(
-      `*[_type == 'places' && title match $query]`,
-      { query: searchQuery }
-    );
-    setSearchResults(response);
   };
 
   return (
