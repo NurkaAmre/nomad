@@ -1,4 +1,5 @@
 import { GetHeroSpotData } from "@/lib/GetHeroSpotData";
+import Link from "next/link";
 
 const Hero = async () => {
   const heroPlaces = await GetHeroSpotData();
@@ -29,9 +30,9 @@ const Hero = async () => {
         <p className='md:text-3xl text-xl font-medium -tracking-wide pb-3 md:px-[3rem] md:py-[2rem]'>
           Start your travel at an affordable price with Nomads.Contact us not below.
         </p>
-        <button className='bg-[#6179ad] tracking-wide font-semibold uppercase px-4 py-2 md:text-2xl md:mb-5 hover:bg-[#93b7e3ec]'>
+        <Link className='bg-[#6179ad] tracking-wide font-semibold uppercase px-4 py-2 md:text-2xl md:mb-5 hover:bg-[#93b7e3ec]' href="/booking">
           Book Now
-        </button>
+        </Link>
       </div>
 
     </section>
