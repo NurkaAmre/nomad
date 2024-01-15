@@ -1,9 +1,9 @@
-'use client'
+'use client';
 import { client } from "@/sanity/lib/client";
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import './todo.css';
+import classes from './Todo.module.css'
 import { SiYourtraveldottv } from "react-icons/si";
 
 interface Place {
@@ -14,9 +14,14 @@ interface Place {
   category: string;
 }
 
-const Todo = () => {
+type PropTypes = {
+  places: Place[]
+  baseUrl: string
+}
+
+const Todo = ({places, baseUrl}: PropTypes) => {
   const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
-  const [options, setOptions] = useState<Place[]>([] as Place[]);
+  const [options, setOptions] = useState<Place[]>(places);
   
   
   useEffect(() => {
@@ -26,14 +31,9 @@ const Todo = () => {
 
   const fetchDataByCategory = async (category: string) => {
     try {
-      const todoData: Place[] = await client.fetch(`*[_type == "places" && category == "${category}"]{
-        "id": _id,
-        title,
-        "image": image.asset->url,
-        description,
-        category
-      }`);
-      setOptions(todoData);
+      const res = await fetch(`${baseUrl}/api/todo/${category}`)
+      const result = await res.json()
+      setOptions(result.data);
     } catch (error) {
       console.error('Error fetching data: ', error);
       setOptions([]);
@@ -44,9 +44,9 @@ const Todo = () => {
     fetchDataByCategory(category);
   };
 
-  useEffect(() => {
-    fetchDataByCategory('festival');
-  }, []);
+  // useEffect(() => {
+  //   fetchDataByCategory('festival');
+  // }, []);
   
   const handleHover = (index: number) => {
     setExpandedIndex(index);
@@ -66,42 +66,42 @@ const Todo = () => {
         <ul className='flex flex-wrap justify-center items-center my-4 relative'>
            <li>
             <button
-              className='bttn'
+              className={classes.bttn}
               onClick={() => handleCategoryClick('festival')}>
               Festival
             </button>
           </li>
            <li>
             <button
-              className='bttn'
+              className={classes.bttn}
               onClick={() => handleCategoryClick('artculture')}>
               Art & Culture
             </button>
           </li>
            <li>
             <button
-              className='bttn'
+              className={classes.bttn}
               onClick={() => handleCategoryClick('foodsdrink')}>
               Foods & Drink
             </button>
           </li>
           <li>
             <button
-              className='bttn'
+              className={classes.bttn}
               onClick={() => handleCategoryClick('adventure')}>
               Adventure
             </button>
           </li>
           <li>
             <button
-              className='bttn'
+              className={classes.bttn}
               onClick={() => handleCategoryClick('nature')}>
               Nature
             </button>
           </li>
           <li>
              <button
-              className='bttn'
+              className={classes.bttn}
               onClick={() => handleCategoryClick('monastery')}>
               Monastery
             </button>

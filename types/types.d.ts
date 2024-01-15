@@ -24,3 +24,11 @@ type TourItemType = {
 };
 
 type TourListType = TourItemType[];
+
+interface Place {
+  id: string;
+  title: string;
+  image: string;
+  description: string;
+  category: string;
+}

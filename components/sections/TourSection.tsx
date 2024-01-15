@@ -1,23 +1,19 @@
-'use client'
-import { useEffect, useState } from 'react';
 import { client } from "@/sanity/lib/client";
 import Tours from '@/components/NewTours';
+import CustomErrorComponent from "../UI/CustomErrorComponent";
 
-const TourSection = () => {
-  const [tours, setTours] = useState([]);
+const TourSection = async() => {
+  let tours
+  try {
 
-  useEffect(() => {
-    const fetchTours = async () => {
-      try {
-        const tourData = await client.fetch('*[_type == "tour"]{ "id": _id, title, author, topic, description, "image": image.asset->url, duration, location, price }');
-        setTours(tourData);
-      } catch (error) {
-        console.error('Error fetching tours:', error);
-      }
-    };
+   tours = await client.fetch('*[_type == "tour"]{ "id": _id, title, author, topic, description, "image": image.asset->url, duration, location, price }');
 
-    fetchTours();
-  }, []);
+
+  } catch (error:any){
+    return <section className="w-full h-[5rem] relative" id="todo"><CustomErrorComponent isFixed={false} title="An Error occurred" message="Error fetching data" /></section>
+    
+  }
+
 
   return (
     <section className="mb-10">

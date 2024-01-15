@@ -34,7 +34,7 @@ const Tours = ({ tours }: PropTypes) => {
    return (
       <li
         key={tour.id}
-        className={`w-[80px] mt-2 md:mb-2 static h-[100px] md:w-[180px] md:h-[200px] shadow-3xl rounded-md overflow-hidden ${activeClass}`}
+        className={`w-[80px] mt-2 md:mb-2 static h-[100px] md:w-[110px] md:h-[130px] shadow-3xl rounded-md overflow-hidden ${activeClass}`}
         onClick={() => handleCurrentSlide(index)}
       >
         <Image
@@ -57,7 +57,7 @@ const Tours = ({ tours }: PropTypes) => {
     }, 5000);
 
     return () => clearInterval(st);
-  }, [currentSlide]);
+  }, [currentSlide, tours]);
 
   return (
     <div className="relative">
@@ -92,8 +92,11 @@ const Tours = ({ tours }: PropTypes) => {
             <Link href='/booking' className='btn2 py-2 uppercase px-4 font-bold md:text-lg'>Book Now</Link>
          </div>
         </div>
-        <ul className="list-none  flex flex-row justify-center md:justify-end absolute md:w-[85%] md:bottom-0 md:right-4 gap-2 px-4 bottom-8">
-        {window.innerWidth > 767 ? toursIcon : toursForMobile}
+        <ul className="hidden md:flex list-none flex-row justify-center md:justify-end absolute md:w-[85%] md:bottom-0 md:right-4 gap-2 px-4 bottom-8">
+        { toursIcon}
+      </ul>
+        <ul className="list-none  flex flex-row justify-center md:justify-end md:hidden absolute md:w-[85%] md:bottom-0 md:right-4 gap-2 px-4 bottom-8">
+        { toursForMobile}
       </ul>
       </div>
     </div>
