@@ -119,17 +119,17 @@ const Header = () => {
       <SearchBar />
       <div className="btn_action fixed w-fit z-10 right-0 top-[8rem]">
         {session && session.user ? (
-          <button className="text-lg text-white bg-[#6179ad] py-4 px-2 rounded-l" onClick={() => signOut()}>
-            
-              <IoMdLogOut className="text-3xl text-yellow-500" />
-            <span className="btn_show">Sign Out</span>
+          <button className="bg-[#6179ad] flex flex-row gap-1 py-2 px-2 rounded-l" onClick={() => signOut()}>
+              <IoMdLogOut className="hide_icon text-3xl text-white" />
+            <span className="btn_show font-bold uppercase text-lg">Exit</span>
           </button>
         ) : (
-          <Link href="/login">
-            <span>
-              <IoMdLogIn />
-            </span>
-          </Link>
+          <div className="bg-[#6179ad] flex flex-row gap-1 py-2 px-2 rounded-l">
+            <Link href="/login" >
+              <IoMdLogIn className="hide_icon text-3xl text-white"/>
+              <span className="btn_show font-bold uppercase text-lg">Enter</span>
+            </Link>
+          </div>
         )}
       </div>
     </header>

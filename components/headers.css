@@ -9,3 +9,11 @@
 .btn_action:hover .btn_show {
   display: block;
 }
+
+.hide_icon {
+  display: block;
+}
+
+.btn_action:hover .hide_icon{
+  display: none;
+}
