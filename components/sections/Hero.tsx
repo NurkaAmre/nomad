@@ -32,7 +32,7 @@ const heroPlaces = [
 ]
 
 const Hero = () => {
-  const myRef = useRef();
+  const myRef = useRef<HTMLDivElement>(null);
   const inView = useInView(myRef);
   const myController = useAnimation();
   useEffect(() => {
