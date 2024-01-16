@@ -1,11 +1,11 @@
 import Link from "next/link";
 import Image from "next/image";
-import dummyImage from "@/public/images/Eagle_festival_two_days.jpg";
 import { redirect } from "next/navigation";
 import { getServerSession } from "next-auth";
 import nextAuthOptions from "@/lib/nextAuthOptions";
 import { client } from "@/sanity/lib/client";
 import CustomErrorComponent from "@/components/UI/CustomErrorComponent";
+import './dashboard.css'
 
 const fetchBookings = async (userId: string) => {
   const res = await client.fetch(
@@ -32,52 +32,53 @@ const Dashboard = async () => {
   }
 
   return (
-    <article className="p-10 pt-24 flex flex-row justify-center items-center">
+    <article className="min-h-screen flex justify-center items-center bg-black transition duration-500">
       {bookings.length == 0 ? (
         <p>No Booking found! Please book your trip now</p>
       ) : (
         <div className="">
           {bookings.map((booking: any) => {
-            const backgroundImageStyle = {
-              backgroundImage: `url(${booking.tour.image})`,
-              backgroundSize: "cover",
-              backgroundRepeat: "no-repeat",
-            };
-
             return (
               <div
-                className="min-h-[300px] relative min-w-[250px] border-4 border-solid border-c flex flex-col gap-3 items-center px-2 py-2 rounded-[10px] shadow-inner opacity-90"
-                style={backgroundImageStyle}
-                key={booking.id}
+                className="container"
               >
-                <span className="absolute top-2 right-4">
+                <div className="box" data-color="clr1">
+                <div className="imgBx">
+                  <Image src={booking.tour.image} width={200} height={300} className="img" alt="Pattern" />
+                </div>
+                  <div>
+                    <span className="absolute top-2 right-4">
                   {booking.isConfirmed ? (
                     <div className="icon flex justify-center w-6 h-6 rounded-full bg-green-500 text-defaultBackground"></div>
                   ) : (
                     <div className="icon flex justify-center w-6 h-6 rounded-full bg-orange-500 text-defaultBackground"></div>
                   )}
                 </span>
+
                 <h4 className="text-white font-bold font-abhaya tracking-[5px] md:mt-[1.5rem] text-base text-animation">
                Tour Of Nomads
-             </h4>
+                </h4>
                 <h3 className="text-3xl text-[#f1683a] font-bold tracking-wider font-abhaya">
                   {booking.tour.title}
                 </h3>
-                <div className='border border-gray-300 mt-6'>
-            <div className='border-b border-gray-300 flex'>
-              <p className='w-1/2 border-r border-gray-300 text-cyan-400 font-bold p-2'>Price</p>
-              <p className='w-2/3 p-2'>{booking.tour.price}$</p>
-            </div>
-            <div className='border-b border-gray-300 flex'>
-              <p className='w-1/2 border-r border-gray-300 pr-6'>Trip Duration</p>
-              <p className='w-2/3 p-2'>{booking.tripDuration}</p>
-            </div>
-          </div>
 
-                {/* <div className="border-t border-solid border-c w-full mt-3"></div> */}
+                <div className='flex flex-col justify-center'>
+                  <div className='flex justify-around'>
+                    <p className='font-poller'>Price</p>
+                    <p className=''>${booking.tour.price}</p>
+                  </div>
+                  <div className='flex gap-4'>
+                    <p className='font-poller'>Trip Duration</p>
+                    <p className=''>{booking.tripDuration}days</p>
+                  </div>
+                </div>
+
+                <div className="border-t pt-6 border-solid border-c w-full mt-3"></div>
                 <p className="text-end text-slate-200  text-sm">
                   <span>{booking.startDate}</span>
                 </p>
+                </div>
+               </div> 
               </div>
             );
           })}
@@ -87,4 +88,4 @@ const Dashboard = async () => {
   );
 };
 
-export default Dashboard;
+export default Dashboard; 
