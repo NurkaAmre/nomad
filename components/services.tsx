@@ -3,7 +3,7 @@ import { FaUtensils, FaPlane, FaBus, FaHotel } from 'react-icons/fa';
 
 const Services = () => {
   return (
-    <section className="">
+    <section className="" id='services'>
       <div className="flex flex-col text-white justify-center items-center">
         <h2 className="text-center mb-3 text-4xl md:text-5xl font-abhaya">The Perfect Travel</h2>
         <hr className="w-[180px] md:w-[720px] h-px mx-auto mt-2 md:mb-2 bg-gray-500 border-0 rounded dark:bg-gray-700" />

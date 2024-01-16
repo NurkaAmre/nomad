@@ -15,7 +15,7 @@ const Hero = async () => {
   ));
 
   return (
-    <section className="">
+    <section className="" id="hero">
       <div className="relative">
         <ul className="flex flex-row overflow-hidden justify-center">
           {heroPlacesList}

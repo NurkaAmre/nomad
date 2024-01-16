@@ -38,7 +38,7 @@ const Header = () => {
       >
         <li>
           <Link
-            href={"#"}
+            href={"#countryinfo"}
             className="py-2 px-4 hover:bg-[#6179ad] hover:rounded-full"
           >
             Destinations
@@ -46,7 +46,7 @@ const Header = () => {
         </li>
         <li>
           <Link
-            href={"#"}
+            href={"#todo"}
             className="py-2 px-4 hover:bg-[#6179ad] hover:rounded-full"
           >
             Things To Do
@@ -54,7 +54,7 @@ const Header = () => {
         </li>
         <li>
           <Link
-            href={"#"}
+            href={"#toursection"}
             className="py-2 px-4 hover:bg-[#6179ad] hover:rounded-full"
           >
             Tours
@@ -62,10 +62,18 @@ const Header = () => {
         </li>
         <li>
           <Link
-            href={"#"}
+            href={"#services"}
             className="py-2 px-4 hover:bg-[#6179ad] hover:rounded-full"
           >
             Services
+          </Link>
+        </li>
+         <li>
+          <Link
+            href={"#popularplace"}
+            className="py-2 px-4 hover:bg-[#6179ad] hover:rounded-full"
+          >
+            Popular Places
           </Link>
         </li>
       </ul>
@@ -83,7 +91,7 @@ const Header = () => {
           >
             <li>
               <Link
-                href={"#"}
+                href={"#countryinfo"}
                 className="py-2 px-4 hover:bg-[#6179ad] hover:rounded-full"
               >
                 Destinations
@@ -91,7 +99,7 @@ const Header = () => {
             </li>
             <li>
               <Link
-                href={"#"}
+                href={"#todo"}
                 className="py-2 px-4 hover:bg-[#6179ad] hover:rounded-full"
               >
                 Things To Do
@@ -99,7 +107,7 @@ const Header = () => {
             </li>
             <li>
               <Link
-                href={"#"}
+                href={"#toursection"}
                 className="py-2 px-4 hover:bg-[#6179ad] hover:rounded-full"
               >
                 Tours
@@ -107,10 +115,18 @@ const Header = () => {
             </li>
             <li>
               <Link
-                href={"#"}
+                href={"#services"}
                 className="py-2 px-4 hover:bg-[#6179ad] hover:rounded-full"
               >
                 Services
+              </Link>
+            </li>
+            <li>
+              <Link
+                href={"#popularplace"}
+                className="py-2 px-4 hover:bg-[#6179ad] hover:rounded-full"
+              >
+                Popular Places
               </Link>
             </li>
           </motion.ul>
