@@ -32,7 +32,7 @@ const Dashboard = async () => {
   }
 
   return (
-    <article className="min-h-screen flex justify-center items-center bg-black transition duration-500">
+    <article className="min-h-screen flex justify-center items-center transition duration-500">
       {bookings.length == 0 ? (
         <p>No Booking found! Please book your trip now</p>
       ) : (
@@ -44,17 +44,17 @@ const Dashboard = async () => {
               >
                 <div className="box" data-color="clr1">
                 <div className="imgBx">
-                  <Image src={booking.tour.image} width={200} height={300} className="img" alt="Pattern" />
+                  <Image src={booking.tour.image} layout="fill" className="img" alt="Pattern" />
                 </div>
-                  <div>
+                  
                     <span className="absolute top-2 right-4">
                   {booking.isConfirmed ? (
-                    <div className="icon flex justify-center w-6 h-6 rounded-full bg-green-500 text-defaultBackground"></div>
+                    <div className="icon flex justify-center w-6 h-6 rounded-full bg-green-400 text-defaultBackground"></div>
                   ) : (
                     <div className="icon flex justify-center w-6 h-6 rounded-full bg-orange-500 text-defaultBackground"></div>
                   )}
                 </span>
-
+              <div className="glass">
                 <h4 className="text-white font-bold font-abhaya tracking-[5px] md:mt-[1.5rem] text-base text-animation">
                Tour Of Nomads
                 </h4>
@@ -62,7 +62,7 @@ const Dashboard = async () => {
                   {booking.tour.title}
                 </h3>
 
-                <div className='flex flex-col justify-center'>
+                <div className='flex flex-col justify-center mt-4'>
                   <div className='flex justify-around'>
                     <p className='font-poller'>Price</p>
                     <p className=''>${booking.tour.price}</p>
@@ -72,9 +72,7 @@ const Dashboard = async () => {
                     <p className=''>{booking.tripDuration}days</p>
                   </div>
                 </div>
-
-                <div className="border-t pt-6 border-solid border-c w-full mt-3"></div>
-                <p className="text-end text-slate-200  text-sm">
+                <p className="text-end text-slate-200 mt-6 text-sm">
                   <span>{booking.startDate}</span>
                 </p>
                 </div>

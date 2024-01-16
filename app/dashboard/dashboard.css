@@ -40,7 +40,7 @@
 }
 
 .container .box:hover .imgBx img {
-  opacity: 0.4;
+  opacity: 0.8;
 }
 
 .container .box .glass {
@@ -48,34 +48,25 @@
   inset: 0;
   background: linear-gradient(#fff2, transparent);
   border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 15px 15px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 15px 15px rgba(0, 0, 0, 0.05);
   backdrop-filter: blur(15px);
   border-radius: 10px;
   scale: 0;
   opacity: 0;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   overflow: hidden;
-  transition: 0.5s;
+  transition: 1s;
 }
 
 .container .box:hover {
-  transform: rotate(0deg);
+  transform: rotate(-10deg);
 }
 
 .container .box:hover .glass {
   scale: 1;
-  transform: rotate(20deg);
+  transform: rotate(10deg);
   opacity: 1;
-}
-
-.container .box .glass h2 {
-  font-size: 1.25em;
-  color: #fff;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  text-align: center;
-  line-height: 0.8em;
 }
