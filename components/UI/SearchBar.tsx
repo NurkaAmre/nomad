@@ -18,7 +18,7 @@ function SearchBar() {
 
   return (
     <>
-      <div className="flex rounded-full desktop-content search-box px-2 items-center bg-slate-50">
+      <div className="flex rounded-full desktop-content search-box px-2 my-4 md:my-0 items-center bg-slate-50">
         <FiSearch className="text-gray-600 text-lg cursor-pointer" />
         <form onSubmit={handleSearch}>
           <input

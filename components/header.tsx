@@ -87,7 +87,7 @@ const Header = () => {
               duration: 0.2,
               ease: easeInOut,
             }}
-            className={`flex md:hidden flex-col md:flex-row tracking-wider md:gap-10 md:text-xl text-xl md:mt-2`}
+            className={`flex my-4 md:hidden flex-col md:flex-row gap-2 md:gap-10 md:text-xl text-base md:mt-2`}
           >
             <li>
               <Link
@@ -132,7 +132,7 @@ const Header = () => {
           </motion.ul>
         )}
       </AnimatePresence>
-      <SearchBar />
+      <SearchBar/>
       <div className="btn_action fixed w-fit z-10 right-0 top-[8rem]">
         {session && session.user ? (
           <button className="bg-[#6179ad] flex flex-row gap-1 py-2 px-2 rounded-l" onClick={() => signOut()}>
