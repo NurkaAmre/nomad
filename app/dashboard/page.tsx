@@ -41,6 +41,7 @@ const Dashboard = async () => {
             return (
               <div
                 className="container"
+                key={booking.id}
               >
                 <div className="box" data-color="clr1">
                 <div className="imgBx">
