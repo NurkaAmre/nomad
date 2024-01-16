@@ -33,12 +33,12 @@ const Header = () => {
       </div>
       <ul
         className={
-          "hidden md:flex flex-col md:flex-row tracking-wider md:gap-10 md:text-xl text-xl md:mt-2"
+          "hidden md:flex flex-col md:flex-row tracking-wider md:gap-4 md:text-base text-xl md:mt-2"
         }
       >
         <li>
           <Link
-            href={"#"}
+            href={"#countryinfo"}
             className="py-2 px-4 hover:bg-[#6179ad] hover:rounded-full"
           >
             Destinations
@@ -46,7 +46,7 @@ const Header = () => {
         </li>
         <li>
           <Link
-            href={"#"}
+            href={"#todo"}
             className="py-2 px-4 hover:bg-[#6179ad] hover:rounded-full"
           >
             Things To Do
@@ -54,7 +54,7 @@ const Header = () => {
         </li>
         <li>
           <Link
-            href={"#"}
+            href={"#toursection"}
             className="py-2 px-4 hover:bg-[#6179ad] hover:rounded-full"
           >
             Tours
@@ -62,10 +62,18 @@ const Header = () => {
         </li>
         <li>
           <Link
-            href={"#"}
+            href={"#services"}
             className="py-2 px-4 hover:bg-[#6179ad] hover:rounded-full"
           >
             Services
+          </Link>
+        </li>
+         <li>
+          <Link
+            href={"#popularplace"}
+            className="py-2 px-4 hover:bg-[#6179ad] hover:rounded-full"
+          >
+            Popular Places
           </Link>
         </li>
       </ul>
@@ -79,11 +87,11 @@ const Header = () => {
               duration: 0.2,
               ease: easeInOut,
             }}
-            className={`flex md:hidden flex-col md:flex-row tracking-wider md:gap-10 md:text-xl text-xl md:mt-2`}
+            className={`flex my-4 md:hidden flex-col md:flex-row gap-2 md:gap-10 md:text-xl text-base md:mt-2`}
           >
             <li>
               <Link
-                href={"#"}
+                href={"#countryinfo"}
                 className="py-2 px-4 hover:bg-[#6179ad] hover:rounded-full"
               >
                 Destinations
@@ -91,7 +99,7 @@ const Header = () => {
             </li>
             <li>
               <Link
-                href={"#"}
+                href={"#todo"}
                 className="py-2 px-4 hover:bg-[#6179ad] hover:rounded-full"
               >
                 Things To Do
@@ -99,7 +107,7 @@ const Header = () => {
             </li>
             <li>
               <Link
-                href={"#"}
+                href={"#toursection"}
                 className="py-2 px-4 hover:bg-[#6179ad] hover:rounded-full"
               >
                 Tours
@@ -107,29 +115,37 @@ const Header = () => {
             </li>
             <li>
               <Link
-                href={"#"}
+                href={"#services"}
                 className="py-2 px-4 hover:bg-[#6179ad] hover:rounded-full"
               >
                 Services
               </Link>
             </li>
+            <li>
+              <Link
+                href={"#popularplace"}
+                className="py-2 px-4 hover:bg-[#6179ad] hover:rounded-full"
+              >
+                Popular Places
+              </Link>
+            </li>
           </motion.ul>
         )}
       </AnimatePresence>
-      <SearchBar />
+      <SearchBar/>
       <div className="btn_action fixed w-fit z-10 right-0 top-[8rem]">
         {session && session.user ? (
-          <button className="text-lg text-white bg-[#6179ad] py-4 px-2 rounded-l" onClick={() => signOut()}>
-            
-              <IoMdLogOut className="text-3xl text-yellow-500" />
-            <span className="btn_show">Sign Out</span>
+          <button className="bg-[#6179ad] flex flex-row gap-1 py-2 px-2 rounded-l" onClick={() => signOut()}>
+              <IoMdLogOut className="hide_icon text-3xl text-white" />
+            <span className="btn_show font-bold uppercase text-lg">Exit</span>
           </button>
         ) : (
-          <Link href="/login">
-            <span>
-              <IoMdLogIn />
-            </span>
-          </Link>
+          <div className="bg-[#6179ad] flex flex-row gap-1 py-2 px-2 rounded-l">
+            <Link href="/login" >
+              <IoMdLogIn className="hide_icon text-3xl text-white"/>
+              <span className="btn_show font-bold uppercase text-lg">Enter</span>
+            </Link>
+          </div>
         )}
       </div>
     </header>

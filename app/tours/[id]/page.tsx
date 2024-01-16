@@ -28,7 +28,7 @@ const TourDetail = async({params}: PropTypes) => {
   const { id, title, description, image, duration, longDescription, location, price } = tourDetails;
 
   return (
-    <article id={id} className="flex">
+    <article id={id} className="flex pt-16 md:pt-0">
       <div className='md:flex-1'>
       <div className='relative h-full'>
         <Image src={image} layout="fill" objectFit="cover" alt={title} />

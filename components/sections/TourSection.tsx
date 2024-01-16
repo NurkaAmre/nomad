@@ -16,7 +16,7 @@ const TourSection = async() => {
 
 
   return (
-    <section className="mb-10">
+    <section id="toursection" className="mb-10">
       {tours.length > 0 ? (
         <Tours tours={tours} />
       ) : (
