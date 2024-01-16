@@ -33,7 +33,7 @@ const Header = () => {
       </div>
       <ul
         className={
-          "hidden md:flex flex-col md:flex-row tracking-wider md:gap-10 md:text-xl text-xl md:mt-2"
+          "hidden md:flex flex-col md:flex-row tracking-wider md:gap-4 md:text-base text-xl md:mt-2"
         }
       >
         <li>

@@ -1,5 +1,4 @@
 'use client';
-import { GetHeroSpotData } from '@/lib/GetHeroSpotData';
 import Link from 'next/link';
 import { useRef, useEffect } from 'react';
 import { motion, useInView, useAnimation } from 'framer-motion';
@@ -24,8 +23,15 @@ const item = {
   },
 };
 
-const Hero = async () => {
-  const heroPlaces = await GetHeroSpotData();
+const heroPlaces = [
+  { id: 1, name: "Spot1", image: "/images/e1.jpg" },
+  { id: 2, name: "Spot2", image: "/images/h5.jpg" },
+  { id: 3, name: "Spot3", image: "/images/h1.jpg" },
+  { id: 4, name: "Spot4", image: "/images/h2.jpg" },
+  { id: 5, name: "Spot5", image: "/images/ch1.jpg" }
+]
+
+const Hero = () => {
   const myRef = useRef();
   const inView = useInView(myRef);
   const myController = useAnimation();

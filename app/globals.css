@@ -15,6 +15,7 @@ body {
   color: #fff;
     background: var(--primary-bg);
     font-family: var(--font-poppins);
+    scroll-behavior: smooth;
   }
   
   button {
