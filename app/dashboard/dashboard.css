@@ -1,13 +1,12 @@
-.container {
+.card-container {
   position: relative;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  gap: 40px;
 }
 
-.container .box {
+.card-container .box {
   position: relative;
   width: 300px;
   height: 300px;
@@ -18,7 +17,7 @@
   transition: 0.5s;
 }
 
-.container .box .imgBx {
+.card-container .box .imgBx {
   position: absolute;
   inset: 0;
   border-radius: 12px;
@@ -28,7 +27,7 @@
   transition: 0.5s;
 }
 
-.container .box .imgBx img {
+.card-container .box .imgBx img {
   position: absolute;
   top: 0;
   left: 0;
@@ -39,11 +38,11 @@
   transition: 0.5s;
 }
 
-.container .box:hover .imgBx img {
+.card-container .box:hover .imgBx img {
   opacity: 0.8;
 }
 
-.container .box .glass {
+.card-container .box .glass {
   position: absolute;
   inset: 0;
   background: linear-gradient(#fff2, transparent);
@@ -61,11 +60,11 @@
   transition: 1s;
 }
 
-.container .box:hover {
+.card-container .box:hover {
   transform: rotate(-10deg);
 }
 
-.container .box:hover .glass {
+.card-container .box:hover .glass {
   scale: 1;
   transform: rotate(10deg);
   opacity: 1;

@@ -32,15 +32,15 @@ const Dashboard = async () => {
   }
 
   return (
-    <article className="min-h-screen flex justify-center items-center transition duration-500">
+    <article className="min-h-screen flex justify-center items-center transition duration-500 md:flex-row pt-20">
       {bookings.length == 0 ? (
         <p>No Booking found! Please book your trip now</p>
       ) : (
-        <div className="">
+        <div className="flex flex-col md:flex-row gap-4 pt-16 md:pt-4 flex-wrap">
           {bookings.map((booking: any) => {
             return (
               <div
-                className="container"
+                className="card-container w-fit"
                 key={booking.id}
               >
                 <div className="box" data-color="clr1">
