@@ -1,0 +1,7 @@
+[
+  { "id": 1, "name": "Spot1", "image": "/images/e1.jpg" },
+  { "id": 2, "name": "Spot2", "image": "/images/h5.jpg" },
+  { "id": 3, "name": "Spot3", "image": "/images/h1.jpg" },
+  { "id": 4, "name": "Spot4", "image": "/images/h2.jpg" },
+  { "id": 5, "name": "Spot5", "image": "/images/ch1.jpg" }
+]

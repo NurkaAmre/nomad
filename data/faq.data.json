@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "query": "Travel Visa",
+    "answer": "A travel visa is a document issued by a foreign country that provides permission for you to gain entry into that country. It is your responsibility to determine whether you need a visa to enter your destination country or countries, or whether you need any additional travel documents. Requirements vary by destination and change periodically. You should check with the consulates of the countries you plan to visit for the most up-to-date information. Requirements may include, but are not limited to, having a passport with at least six months validity remaining, a round-trip airline ticket, and proof of sufficient funds to cover your stay. You may also be required to have a medical exam, proof of lodging arrangements, and/or a letter of invitation from a resident of the country you are visiting."
+  },
+  {
+    "id": 2,
+    "query": "Best season to travel",
+    "answer": "The best time to visit a destination depends on several factors: weather, peak travel season, and festivals. Weather is often the first consideration when deciding when to visit a destination. Before you book your trip, check the average temperatures and rainfall in the destination you plan to visit. You can find this information on the Internet or in a guidebook. You should also consider whether you want to travel during the destination's peak travel season. Peak travel season varies by destination, but it generally refers to the time of year when the most tourists visit a destination. Peak travel season is usually the most expensive time to visit a destination. If you want to avoid crowds and save money, you may want to consider traveling during the destination's off-peak season. Finally, you should consider whether you want to visit a destination during a festival or other special event. Festivals and special events can be a great way to experience a destination's culture, but they can also make it more difficult to find lodging and transportation."
+  },
+  {
+    "id": 3,
+    "query": "How to book a flight",
+    "answer": "You can book a flight online, over the phone, or in person. If you book a flight online, you will need to enter your personal information, including your name, address, and credit card number. You will also need to enter your travel dates and destination. If you book a flight over the phone, you will need to provide the same information. If you book a flight in person, you will need to provide the same information. You will also need to show a valid form of identification, such as a driver's license or passport."
+  },
+  {
+    "id": 4,
+    "query": "How to book a hotel",
+    "answer": "You can book a hotel online, over the phone, or in person. If you book a hotel online, you will need to enter your personal information, including your name, address, and credit card number. You will also need to enter your travel dates and destination. If you book a hotel over the phone, you will need to provide the same information. If you book a hotel in person, you will need to provide the same information. You will also need to show a valid form of identification, such as a driver's license or passport."
+  },
+  {
+    "id": 5,
+    "query": "How to book a car rental",
+    "answer": "You can book a car rental online, over the phone, or in person. If you book a car rental online, you will need to enter your personal information, including your name, address, and credit card number. You will also need to enter your travel dates and destination. If you book a car rental over the phone, you will need to provide the same information. If you book a car rental in person, you will need to provide the same information. You will also need to show a valid form of identification, such as a driver's license or passport."
+  },
+  {
+    "id": 6,
+    "query": "How to book a tour",
+    "answer": "You can book a tour online, over the phone, or in person. If you book a tour online, you will need to enter your personal information, including your name, address, and credit card number. You will also need to enter your travel dates and destination. If you book a tour over the phone, you will need to provide the same information. If you book a tour in person, you will need to provide the same information. You will also need to show a valid form of identification, such as a driver's license or passport."
+  },
+  {
+    "id": 7,
+    "query": "Travel Insurance",
+    "answer": "Travel insurance is a type of insurance that covers the costs and losses associated with traveling. It can cover the costs of medical emergencies, trip cancellations, lost luggage, and other losses that may occur while traveling. Travel insurance can be purchased for a single trip or for multiple trips over a specified period of time. It can be purchased from a travel insurance company, a travel agent, or a travel website."
+  },
+  {
+    "id": 8,
+    "query": "Best season to travel",
+    "answer": "The best time to visit a destination depends on several factors: weather, peak travel season, and festivals. Weather is often the first consideration when deciding when to visit a destination. Before you book your trip, check the average temperatures and rainfall in the destination you plan to visit. You can find this information on the Internet or in a guidebook. You should also consider whether you want to travel during the destination's peak travel season. Peak travel season varies by destination, but it generally refers to the time of year when the most tourists visit a destination. Peak travel season is usually the most expensive time to visit a destination. If you want to avoid crowds and save money, you may want to consider traveling during the destination's off-peak season. Finally, you should consider whether you want to visit a destination during a festival or other special event. Festivals and special events can be a great way to experience a destination's culture, but they can also make it more difficult to find lodging and transportation."
+  },
+  {
+    "id": 9,
+    "query": "How to book a flight",
+    "answer": "You can book a flight online, over the phone, or in person. If you book a flight online, you will need to enter your personal information, including your name, address, and credit card number. You will also need to enter your travel dates and destination. If you book a flight over the phone, you will need to provide the same information. If you book a flight in person, you will need to provide the same information. You will also need to show a valid form of identification, such as a driver's license or passport."
+  },
+  {
+    "id": 10,
+    "query": "How to book a hotel",
+    "answer": "You can book a hotel online, over the phone, or in person. If you book a hotel online, you will need to enter your personal information, including your name, address, and credit card number. You will also need to enter your travel dates and destination. If you book a hotel over the phone, you will need to provide the same information. If you book a hotel in person, you will need to provide the same information. You will also need to show a valid form of identification, such as a driver's license or passport."
+  },
+  {
+    "id": 11,
+    "query": "How to book a car rental",
+    "answer": "You can book a car rental online, over the phone, or in person. If you book a car rental online, you will need to enter your personal information, including your name, address, and credit card number. You will also need to enter your travel dates and destination. If you book a car rental over the phone, you will need to provide the same information. If you book a car rental in person, you will need to provide the same information. You will also need to show a valid form of identification, such as a driver's license or passport."
+  },
+  {
+    "id": 12,
+    "query": "How to book a tour",
+    "answer": "You can book a tour online, over the phone, or in person. If you book a tour online, you will need to enter your personal information, including your name, address, and credit card number. You will also need to enter your travel dates and destination. If you book a tour over the phone, you will need to provide the same information. If you book a tour in person, you will need to provide the same information. You will also need to show a valid form of identification, such as a driver's license or passport."
+  }
+]

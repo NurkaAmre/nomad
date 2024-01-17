@@ -1,0 +1,19 @@
+.btn_action {
+  transition: all 0.2s ease-in-out;
+}
+
+.btn_show {
+  display: none;
+}
+
+.btn_action:hover .btn_show {
+  display: block;
+}
+
+.hide_icon {
+  display: block;
+}
+
+.btn_action:hover .hide_icon{
+  display: none;
+}
