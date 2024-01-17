@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import classes from './Todo.module.css'
 import { SiYourtraveldottv } from "react-icons/si";
+import { useRouter } from "next/navigation";
 
 interface Place {
   id: string;
@@ -22,6 +23,7 @@ type PropTypes = {
 const Todo = ({places, baseUrl}: PropTypes) => {
   const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
   const [options, setOptions] = useState<Place[]>(places);
+  const router = useRouter();
   
   
   useEffect(() => {
@@ -31,7 +33,7 @@ const Todo = ({places, baseUrl}: PropTypes) => {
 
   const fetchDataByCategory = async (category: string) => {
     try {
-      const res = await fetch(`${baseUrl}/api/todo/${category}`)
+      const res = await fetch(`${typeof window === 'undefined'? baseUrl: window.location.origin}/api/todo/${category}`)
       const result = await res.json()
       setOptions(result.data);
     } catch (error) {
