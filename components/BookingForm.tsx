@@ -307,7 +307,7 @@ const BookingForm = ({ user_id, trip_id="", trips }: PropTypes) => {
       });
 
       setSubmitSuccess(true);
-      router.push("/bookings");
+      router.push("/dashboard");
     } catch (error: any) {
       const errMsg =
         error.message ||
