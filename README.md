@@ -111,7 +111,7 @@ Nomads travel agency website to provide user travel services in Mongolia. Users 
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Live Demo Link](https://totoro.live)
+- [Live Demo Link](https://totoros.live)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
