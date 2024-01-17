@@ -62,7 +62,7 @@ const Todo = ({places, baseUrl}: PropTypes) => {
   };
 
   return (
-    <div className='py-10'>
+    <div className='py-4'>
       <div className='flex flex-col text-white justify-center items-center'>
         <h2 className='text-center text-4xl md:text-5xl font-abhaya'>To Do Things</h2>
         <ul className='flex flex-wrap justify-center items-center my-4 relative'>

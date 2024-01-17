@@ -16,8 +16,8 @@ const FaqSection = async () => {
   });
 
   return (
-    <section className="py-10 px-4 md:px-6">
-      <h2 className="text-4xl text-[#797DA5] py-4 text-center">FAQ</h2>
+    <section className="py-4 px-4 md:px-6">
+      <h2 className="text-4xl text-[#797DA5] font-poller py-4 text-center">FAQ</h2>
       <div className="flex flex-row gap-8 bg-[#332F4C] md:bg-transparent p-4 flex-wrap justify-center rounded-lg">
         {faqDataContent}
       </div>
